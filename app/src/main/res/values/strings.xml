@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SmartHeart</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="please_update_the_input">Please update the input</string>
+    <string name="btn_back_to_main_menu">Main Menu</string>
+    <string name="btn_monthly_input">Monthly Input</string>
+    <string name="textview_basic_input">Basic Input</string>
+
+    <string name="str_turn_back">取消</string>
+    <string name="str_forward">前进</string>
+</resources>
