@@ -22,7 +22,7 @@ import java.util.Calendar;
  * Created by Fernando on 15/9/16.
  */
 public class AtyInput extends Activity implements View.OnClickListener {
-    private Button btnBacktoMain;
+    private Button btnBacktoMain,btnMonthInput;
     private Button btnSave;
     private RadioButton btnMale,btnFemale;
     private TextView daTextView;
@@ -35,6 +35,8 @@ public class AtyInput extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_input_data);
 
+        btnMonthInput=(Button)findViewById(R.id.btnMonthInput);
+        btnMonthInput.setOnClickListener(this);
         btnMale= (RadioButton) findViewById(R.id.btnMale);
 
         btnFemale = (RadioButton) findViewById(R.id.btnFemale);
@@ -97,7 +99,9 @@ public class AtyInput extends Activity implements View.OnClickListener {
                 Config.cacheName(AtyInput.this, tvName.getText().toString());
                 Config.cacheDate(AtyInput.this,daTextView.getText().toString());
                 break;
-
+            case R.id.btnMonthInput:
+                startActivity(new Intent(AtyInput.this,AtyMonthInput.class));
+                break;
 
         }
 

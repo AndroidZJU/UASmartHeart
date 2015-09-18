@@ -22,4 +22,25 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:id="@+id/btnSetting"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Useful Links"
+        android:id="@+id/btnLink"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Children Health Info"
+        android:id="@+id/btnInfo"
+        android:layout_gravity="center_horizontal" />
+
 </LinearLayout>
