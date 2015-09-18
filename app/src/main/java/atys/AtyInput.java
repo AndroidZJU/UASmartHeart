@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ import java.util.Calendar;
 public class AtyInput extends Activity implements View.OnClickListener {
     private Button btnBacktoMain;
     private Button btnSave;
+    private RadioButton btnMale,btnFemale;
     private TextView daTextView;
     private TextView tvName;
     private String savedName;
@@ -33,6 +35,11 @@ public class AtyInput extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_input_data);
 
+        btnMale= (RadioButton) findViewById(R.id.btnMale);
+
+        btnFemale = (RadioButton) findViewById(R.id.btnFemale);
+        btnFemale.setOnClickListener(this);
+        btnMale.setOnClickListener(this);
         btnBacktoMain = (Button)findViewById(R.id.btnBacktoMain);
         btnBacktoMain.setOnClickListener(this);
         tvName = (EditText)findViewById(R.id.tv_name);
@@ -48,6 +55,14 @@ public class AtyInput extends Activity implements View.OnClickListener {
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH);
         mDay = c.get(Calendar.DAY_OF_MONTH);
+        switch (Config.getGender(AtyInput.this)){
+            case Config.MALE:
+                btnMale.setChecked(true);
+                break;
+            case Config.FEMALE:
+                btnFemale.setChecked(true);
+                break;
+        }
     }
     @Override
     public void onClick(View v) {
@@ -72,6 +87,12 @@ public class AtyInput extends Activity implements View.OnClickListener {
 
             case R.id.btnSave:
                 Toast.makeText(AtyInput.this,"Saved successful",Toast.LENGTH_SHORT).show();
+                if (btnFemale.isChecked()){
+                    Config.cacheGender(AtyInput.this,Config.FEMALE);
+                }
+                if(btnMale.isChecked()){
+                    Config.cacheGender(AtyInput.this,Config.MALE);
+                }
                 Config.cacheAge(AtyInput.this,age);
                 Config.cacheName(AtyInput.this, tvName.getText().toString());
                 Config.cacheDate(AtyInput.this,daTextView.getText().toString());

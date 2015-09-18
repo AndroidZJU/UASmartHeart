@@ -16,6 +16,9 @@ public class Config {
     private static final String KEY_NAME ="name";
     private static final String KEY_DATE = "date";
     private static final String KEY_AGE = "age";
+    public static final String GENDER_STATUS = "gender_status";
+    public static final String MALE = "gender_male";
+    public static final String FEMALE ="gender_female" ;
 
 
     public static int getCachedMethod(Context context){
@@ -54,5 +57,13 @@ public class Config {
         SharedPreferences.Editor e = context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).edit();
         e.putInt(KEY_AGE, age);
         e.commit();
+    }
+    public static void cacheGender(Context context,String gender){
+        SharedPreferences.Editor e = context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).edit();
+        e.putString(GENDER_STATUS, gender);
+        e.commit();
+    }
+    public static String getGender(Context context){
+        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(GENDER_STATUS, "");
     }
 }
