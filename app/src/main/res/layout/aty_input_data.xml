@@ -40,6 +40,8 @@
         <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:id="@+id/tv_name"
+            android:text="22a"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_weight="1"/>
 
@@ -74,10 +76,15 @@
             android:gravity="center"
             android:id="@+id/tv_date"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="2014-12-10"/>
+            android:text="0000-00-00"/>
 
     </LinearLayout>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/btnSave" />
 
 
 </LinearLayout>
