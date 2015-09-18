@@ -19,6 +19,11 @@ public class Config {
     public static final String GENDER_STATUS = "gender_status";
     public static final String MALE = "gender_male";
     public static final String FEMALE ="gender_female" ;
+    private static final String KEY_HEIGHT = "height";
+    private static final String KEY_WEIGHT = "weight";
+    private static final String KEY_STERNUM = "sternum";
+    private static final String KEY_CHEST_CIRCUMFERENCE = "chest_circumference";
+
 
 
     public static int getCachedMethod(Context context){
@@ -65,5 +70,42 @@ public class Config {
     }
     public static String getGender(Context context){
         return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(GENDER_STATUS, "");
+    }
+
+    public static String getCachedHeight(Context context){
+        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(KEY_HEIGHT, "");
+    }
+
+    public static void cacheHeight(Context context,String height){
+        SharedPreferences.Editor e = context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).edit();
+        e.putString(KEY_HEIGHT, height);
+        e.commit();
+    }
+    public static String getCachedWeight(Context context){
+        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(KEY_WEIGHT, "");
+    }
+
+    public static void cacheWeight(Context context,String weight){
+        SharedPreferences.Editor e = context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).edit();
+        e.putString(KEY_WEIGHT, weight);
+        e.commit();
+    }
+    public static String getCachedSternum(Context context){
+        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(KEY_STERNUM, "");
+    }
+
+    public static void cacheSternum(Context context,String sternum){
+        SharedPreferences.Editor e = context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).edit();
+        e.putString(KEY_STERNUM, sternum);
+        e.commit();
+    }
+    public static String getCachedChestCircumference(Context context){
+        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(KEY_CHEST_CIRCUMFERENCE, "");
+    }
+
+    public static void cacheChestCircumference(Context context,String chest){
+        SharedPreferences.Editor e = context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).edit();
+        e.putString(KEY_CHEST_CIRCUMFERENCE, chest);
+        e.commit();
     }
 }
