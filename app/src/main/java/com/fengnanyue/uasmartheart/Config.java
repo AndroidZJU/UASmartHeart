@@ -38,7 +38,7 @@ public class Config {
 
     public static String getCachedName(Context context){
         return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(KEY_NAME, "");
-        
+
     }
     public static void cacheName(Context context,String name){
         SharedPreferences.Editor e = context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).edit();

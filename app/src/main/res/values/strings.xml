@@ -24,4 +24,5 @@
     <string name="save">Save</string>
     <string name="maybe_later">Maybe later</string>
     <string name="input_now">Input now</string>
+    <string name="call_911">Call 911</string>
 </resources>
