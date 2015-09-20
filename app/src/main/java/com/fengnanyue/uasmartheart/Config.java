@@ -26,6 +26,7 @@ public class Config {
 
 
 
+
     public static int getCachedMethod(Context context){
         return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getInt(KEY_METHOD,RESULT_NONE);
     }
