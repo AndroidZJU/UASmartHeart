@@ -1,6 +1,8 @@
 package atys;
 
 import android.app.Activity;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -19,11 +21,14 @@ public class AtyMethod1 extends Activity {
     private Handler msgHandler;
     private Thread thread;
     public volatile boolean exit;
+    private SoundPool sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_method_1);
         exit = false;
+        sp = new SoundPool(1, AudioManager.STREAM_MUSIC,0);
+
         msgHandler = new Handler(){
             @Override
             public void handleMessage(Message msg) {

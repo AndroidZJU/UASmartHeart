@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name="atys.AtyInput"/>
-        <activity android:name="atys.AtyMethod1"/>
+        <activity android:name="atys.AtyMethod1" />
         <activity android:name="atys.AtyMethod2"/>
         <activity android:name="atys.AtyMethod3"/>
         <activity android:name="atys.AtyInfo"/>
