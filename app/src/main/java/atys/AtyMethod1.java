@@ -22,12 +22,15 @@ public class AtyMethod1 extends Activity {
     private Thread thread;
     public volatile boolean exit;
     private SoundPool sp;
+    private int soundId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_method_1);
         exit = false;
         sp = new SoundPool(1, AudioManager.STREAM_MUSIC,0);
+        soundId = sp.load(this, R.raw.note1, 1);
 
         msgHandler = new Handler(){
             @Override
@@ -67,6 +70,8 @@ public class AtyMethod1 extends Activity {
                 try {
                     while(!exit) {
                         sleep(5000);
+//                        sp.play(soundId, 1, 1, 0, 0, 1);
+                        sleep(1000);
                         Message msg = msgHandler.obtainMessage();
                         msg.arg1 = R.string.push_harder;
                         msgHandler.sendMessage(msg);
