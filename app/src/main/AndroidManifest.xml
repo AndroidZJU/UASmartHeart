@@ -33,5 +33,6 @@
         <activity android:name="atys.AtyLink"/>
         <activity android:name="atys.AtySetting"/>
         <activity android:name="atys.AtyMonthInput"/>
+        <activity android:name="atys.AtyPreGuide"/>
     </application>
 </manifest>

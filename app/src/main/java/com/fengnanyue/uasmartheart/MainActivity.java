@@ -11,9 +11,7 @@ import android.widget.Toast;
 import atys.AtyInfo;
 import atys.AtyInput;
 import atys.AtyLink;
-import atys.AtyMethod1;
-import atys.AtyMethod2;
-import atys.AtyMethod3;
+import atys.AtyPreGuide;
 import atys.AtySetting;
 
 public class MainActivity extends Activity {
@@ -41,24 +39,13 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 switch (Config.getCachedMethod(MainActivity.this)) {
-                    case Config.RESULT_METHOD1:
-                        startActivity(new Intent(MainActivity.this, AtyMethod1.class));
-                        finish();
+                    case Config.RESULT_NONE:
+                        Toast.makeText(MainActivity.this, R.string.please_update_the_input, Toast.LENGTH_LONG).show();
                         break;
-                    case Config.RESULT_METHOD2:
 
-                        startActivity(new Intent(MainActivity.this, AtyMethod2.class));
-                        finish();
-                        break;
-                    case Config.RESULT_METHOD3:
-
-                        startActivity(new Intent(MainActivity.this, AtyMethod3.class));
-                        finish();
-                        break;
 
                     default:
-                        Toast.makeText(MainActivity.this, R.string.please_update_the_input, Toast.LENGTH_LONG).show();
-
+                        startActivity(new Intent(MainActivity.this, AtyPreGuide.class));
                         break;
 
                 }
