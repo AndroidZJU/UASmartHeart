@@ -9,7 +9,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Update Input"
+        android:text="@string/update_input"
         android:id="@+id/btnUpdateInput"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />
@@ -17,7 +17,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start CPR"
+        android:text="@string/start_cpr"
         android:id="@+id/btnStartCPR"
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal" />
@@ -25,21 +25,21 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Settings"
+        android:text="@string/settings"
         android:id="@+id/btnSetting"
         android:layout_gravity="center_horizontal" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Useful Links"
+        android:text="@string/useful_links"
         android:id="@+id/btnLink"
         android:layout_gravity="center_horizontal" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Children Health Info"
+        android:text="@string/children_health_info"
         android:id="@+id/btnInfo"
         android:layout_gravity="center_horizontal" />
 

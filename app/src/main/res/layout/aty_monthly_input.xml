@@ -12,14 +12,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnMonthtoMain"
-            android:text="Main Menu"
+            android:text="@string/main_menu"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Monthly Input"
+            android:text="@string/monthly_input"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     </LinearLayout>
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Height(cm): "/>
+            android:text="@string/height_cm"/>
         <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Weight(kg): "/>
+            android:text="@string/weight_kg"/>
         <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Chest Circumference(cm): "/>
+            android:text="@string/chest_circumference_cm"/>
         <EditText
             android:layout_width="0dp"
             android:numeric="integer"
@@ -89,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Length of Sternum(cm): "/>
+            android:text="@string/length_of_sternum_cm"/>
         <EditText
             android:layout_width="0dp"
             android:numeric="integer"
@@ -104,7 +104,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
+        android:text="@string/save"
         android:id="@+id/btnMonthSave"
         android:layout_gravity="center_horizontal" />
 

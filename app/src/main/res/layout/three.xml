@@ -18,14 +18,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnInputData"
-            android:text="Input now"/>
+            android:text="@string/input_now"/>
 
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnStart"
-            android:text="Maybe later"/>
+            android:text="@string/maybe_later"/>
 
 
 
