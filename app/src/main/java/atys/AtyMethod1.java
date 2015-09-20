@@ -17,16 +17,27 @@ import java.util.Locale;
 public class AtyMethod1 extends Activity {
     private TextToSpeech mTextToSpeech;
     private Handler msgHandler;
+    private Thread thread;
+    public volatile boolean exit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_method_1);
+        exit = false;
         msgHandler = new Handler(){
             @Override
             public void handleMessage(Message msg) {
                 switch (msg.arg1){
                     case R.string.push_harder:
                         Toast.makeText(AtyMethod1.this,"Push Harder!",Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.string.push_faster:
+                        Toast.makeText(AtyMethod1.this,"Push Faster!",Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.string.release_fully:
+                        Toast.makeText(AtyMethod1.this,"Release Fully!",Toast.LENGTH_SHORT).show();
                         break;
                     default:
                         break;
@@ -45,11 +56,11 @@ public class AtyMethod1 extends Activity {
                 }
             }
         });
-        new Thread(){
+        thread = new Thread(){
 
             public void run() {
                 try {
-                    while(true) {
+                    while(!exit) {
                         sleep(4000);
                         Message msg = msgHandler.obtainMessage();
                         msg.arg1 = R.string.push_harder;
@@ -61,7 +72,8 @@ public class AtyMethod1 extends Activity {
                     e.printStackTrace();
                 }
             }
-        }.start();
+        };
+        thread.start();
 
 
 
@@ -69,8 +81,10 @@ public class AtyMethod1 extends Activity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
+        exit = true;
         if(mTextToSpeech!=null)
             mTextToSpeech.shutdown();
+        super.onDestroy();
     }
+
 }

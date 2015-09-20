@@ -26,4 +26,6 @@
     <string name="input_now">Input now</string>
     <string name="call_911">Call 911</string>
     <string name="push_harder">Push Harder!</string>
+    <string name="push_faster">Push Faster!</string>
+    <string name="release_fully">Release Fully!</string>
 </resources>
