@@ -61,7 +61,7 @@ public class AtyMethod1 extends Activity {
             public void run() {
                 try {
                     while(!exit) {
-                        sleep(4000);
+                        sleep(5000);
                         Message msg = msgHandler.obtainMessage();
                         msg.arg1 = R.string.push_harder;
                         msgHandler.sendMessage(msg);
