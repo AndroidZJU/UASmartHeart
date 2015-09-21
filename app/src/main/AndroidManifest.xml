@@ -27,9 +27,15 @@
             </intent-filter>
         </activity>
         <activity android:name="atys.AtyInput"/>
-        <activity android:name="atys.AtyMethod1" />
-        <activity android:name="atys.AtyMethod2"/>
-        <activity android:name="atys.AtyMethod3"/>
+        <activity android:name="atys.AtyMethod1"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation"/>
+        <activity android:name="atys.AtyMethod2"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation"/>
+        <activity android:name="atys.AtyMethod3"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation"/>
         <activity android:name="atys.AtyInfo"/>
         <activity android:name="atys.AtyLink"/>
         <activity android:name="atys.AtySetting"/>
