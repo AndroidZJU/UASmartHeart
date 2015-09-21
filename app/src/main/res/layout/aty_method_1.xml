@@ -8,4 +8,8 @@
         android:layout_height="wrap_content"
         android:text="11111111"
         android:id="@+id/textView" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
