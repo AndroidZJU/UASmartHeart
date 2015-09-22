@@ -41,5 +41,8 @@
         <activity android:name="atys.AtySetting"/>
         <activity android:name="atys.AtyMonthInput"/>
         <activity android:name="atys.AtyPreGuide"/>
+        <activity android:name="tools.ShowFront"/>
+        <activity android:name="tools.ShowSide"/>
+
     </application>
 </manifest>

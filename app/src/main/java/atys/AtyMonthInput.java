@@ -21,7 +21,7 @@ import java.util.Calendar;
 public class AtyMonthInput extends Activity implements View.OnClickListener {
 
     private EditText etHeight,etWeight,etChestCircumference,etSternum;
-    private Button btnMonthSave,btnMonthtoMain,btnEdit;
+    private Button btnMonthSave,btnMonthtoMain,btnEdit,btnFrontUpload,btnFrontView,btnSideView,btnSideUpload;
     private TextView tvLastUpdate;
     private int mYear,mMonth,mDay,age;
 
@@ -29,6 +29,18 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_monthly_input);
+        btnFrontUpload=(Button)findViewById(R.id.btnFrontUpload);
+        btnFrontUpload.setOnClickListener(this);
+
+        btnFrontView=(Button)findViewById(R.id.btnFrontView);
+        btnFrontView.setOnClickListener(this);
+
+        btnSideUpload=(Button)findViewById(R.id.btnSideUpload);
+        btnSideUpload.setOnClickListener(this);
+
+        btnSideView=(Button)findViewById(R.id.btnSideView);
+        btnSideView.setOnClickListener(this);
+
         btnEdit=(Button)findViewById(R.id.btnEdit);
         btnEdit.setOnClickListener(this);
         etHeight= (EditText) findViewById(R.id.et_height);
@@ -64,6 +76,22 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                 etChestCircumference.setEnabled(true);
                 etSternum.setEnabled(true);
                 break;
+            case R.id.btnFrontUpload:
+
+                break;
+
+            case R.id.btnFrontView:
+
+                break;
+
+            case R.id.btnSideUpload:
+
+                break;
+
+            case R.id.btnSideView:
+
+                break;
+
             case R.id.btnMonthSave:
                 Toast.makeText(AtyMonthInput.this, "Saved successful", Toast.LENGTH_SHORT).show();
                 Config.cacheHeight(AtyMonthInput.this, etHeight.getText().toString());
