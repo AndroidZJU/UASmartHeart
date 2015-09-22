@@ -29,7 +29,9 @@ public class Config {
     private static final String KEY_UPDATE_DATE = "update_date";
     private static final String KEY_FRONT_IMAGE = "front_image";
     private static final String KEY_SIDE_IMAGE = "side_image";
-
+    public static final int CAMERA_REQUEST_COED=1;
+    public static final int PHOTO_REQUEST_COED=2;
+    public static final int CROP_REQUEST_COED=3;
 
     public static int getCachedMethod(Context context){
         return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getInt(KEY_METHOD,RESULT_NONE);
@@ -135,6 +137,15 @@ public class Config {
         e.putString(KEY_FRONT_IMAGE, front);
         e.commit();
     }
+    public static String getCachedSideImage(Context context){
+        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(KEY_SIDE_IMAGE,"");
+    }
+
+    public static void cacheUpdateSideImage(Context context,String side){
+        SharedPreferences.Editor e = context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).edit();
+        e.putString(KEY_SIDE_IMAGE, side);
+        e.commit();
+    }
 
     public static Bitmap convertStringToIcon(String st)
     {
@@ -142,13 +153,11 @@ public class Config {
         Bitmap bitmap = null;
         try
         {
-            // out = new FileOutputStream("/sdcard/aa.jpg");
             byte[] bitmapArray;
             bitmapArray = Base64.decode(st, Base64.DEFAULT);
             bitmap =
                     BitmapFactory.decodeByteArray(bitmapArray, 0,
                             bitmapArray.length);
-            // bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
             return bitmap;
         }
         catch (Exception e)
