@@ -21,7 +21,7 @@ public class ShowFront extends Activity {
         showFront = (ImageView)findViewById(R.id.showFront);
         strFront = Config.getCachedFrontImage(ShowFront.this);
         Bitmap bmp = Config.convertStringToIcon(strFront);
-
+        showFront.setImageBitmap(bmp);
     }
 }
 
