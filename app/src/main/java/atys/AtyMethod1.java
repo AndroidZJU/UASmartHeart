@@ -34,7 +34,7 @@ public class AtyMethod1 extends Activity {
         tvName1 = (TextView)findViewById(R.id.tvName_1);
         tvAge=(TextView)findViewById(R.id.tvAge);
         tvName1.setText(Config.getCachedName(AtyMethod1.this));
-        tvAge.setText(Config.getCachedAge(AtyMethod1.this));
+        tvAge.setText(Config.getCachedAge(AtyMethod1.this)+"");
         exit = false;
         sp = new SoundPool(1, AudioManager.STREAM_MUSIC,0);
         soundId = sp.load(this, R.raw.note1, 1);
