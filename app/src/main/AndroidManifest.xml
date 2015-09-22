@@ -43,6 +43,7 @@
         <activity android:name="atys.AtyPreGuide"/>
         <activity android:name="tools.ShowFront"/>
         <activity android:name="tools.ShowSide"/>
+        <activity android:name="tools.DialogActivity"/>
 
     </application>
 </manifest>

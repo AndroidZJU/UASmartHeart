@@ -36,7 +36,8 @@ import tools.ShowSide;
 public class AtyMonthInput extends Activity implements View.OnClickListener {
 
     private EditText etHeight,etWeight,etChestCircumference,etSternum;
-    private Button btnMonthSave,btnMonthtoMain,btnEdit,btnFrontUpload,btnFrontView,btnSideView,btnSideUpload;
+    private Button btnMonthSave,btnMonthtoMain,btnEdit,btnFrontUpload,
+            btnFrontView,btnSideView,btnSideUpload;
     private TextView tvLastUpdate;
     private int mYear,mMonth,mDay,age;
 
@@ -45,33 +46,33 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_monthly_input);
         btnFrontUpload=(Button)findViewById(R.id.btnFrontUpload);
-        btnFrontUpload.setOnClickListener(this);
-
         btnFrontView=(Button)findViewById(R.id.btnFrontView);
-        btnFrontView.setOnClickListener(this);
-
         btnSideUpload=(Button)findViewById(R.id.btnSideUpload);
-        btnSideUpload.setOnClickListener(this);
-
         btnSideView=(Button)findViewById(R.id.btnSideView);
-        btnSideView.setOnClickListener(this);
-
-        btnEdit=(Button)findViewById(R.id.btnEdit);
-        btnEdit.setOnClickListener(this);
-        etHeight= (EditText) findViewById(R.id.et_height);
-        etWeight= (EditText) findViewById(R.id.et_weight);
-        tvLastUpdate=(TextView)findViewById(R.id.tvLastUpdate);
-        tvLastUpdate.setText(Config.getCachedUpdateDate(AtyMonthInput.this));
-        etChestCircumference= (EditText) findViewById(R.id.et_chestcircumference);
-        etSternum= (EditText) findViewById(R.id.et_sternum);
         btnMonthSave = (Button)findViewById(R.id.btnMonthSave);
         btnMonthtoMain=(Button)findViewById(R.id.btnMonthtoMain);
+        btnEdit=(Button)findViewById(R.id.btnEdit);
+
+        etHeight= (EditText) findViewById(R.id.et_height);
+        etWeight= (EditText) findViewById(R.id.et_weight);
+        etChestCircumference= (EditText) findViewById(R.id.et_chestcircumference);
+        etSternum= (EditText) findViewById(R.id.et_sternum);
+        tvLastUpdate=(TextView)findViewById(R.id.tvLastUpdate);
+
+        btnFrontUpload.setOnClickListener(this);
+        btnFrontView.setOnClickListener(this);
+        btnSideUpload.setOnClickListener(this);
+        btnSideView.setOnClickListener(this);
+        btnEdit.setOnClickListener(this);
         btnMonthSave.setOnClickListener(this);
         btnMonthtoMain.setOnClickListener(this);
+
+        tvLastUpdate.setText(Config.getCachedUpdateDate(AtyMonthInput.this));
         etHeight.setText(Config.getCachedHeight(AtyMonthInput.this));
         etWeight.setText(Config.getCachedWeight(AtyMonthInput.this));
         etSternum.setText(Config.getCachedSternum(AtyMonthInput.this));
         etChestCircumference.setText(Config.getCachedChestCircumference(AtyMonthInput.this));
+
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH);
