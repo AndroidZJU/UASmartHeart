@@ -16,7 +16,7 @@ public class ShowFront extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.showfront);
         showFront = (ImageView)findViewById(R.id.showFront);
-        
+
     }
 }
 

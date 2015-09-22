@@ -24,6 +24,8 @@ public class Config {
     private static final String KEY_STERNUM = "sternum";
     private static final String KEY_CHEST_CIRCUMFERENCE = "chest_circumference";
     private static final String KEY_UPDATE_DATE = "update_date";
+    private static final String KEY_FRONT_IMAGE = "front_image";
+    private static final String KEY_SIDE_IMAGE = "side_image";
 
 
     public static int getCachedMethod(Context context){
@@ -118,6 +120,16 @@ public class Config {
     public static void cacheUpdateDate(Context context,String update){
         SharedPreferences.Editor e = context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).edit();
         e.putString(KEY_UPDATE_DATE, update);
+        e.commit();
+    }
+
+    public static String getCachedFrontImage(Context context){
+        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(KEY_FRONT_IMAGE,"");
+    }
+
+    public static void cacheUpdateFrontImage(Context context,String front){
+        SharedPreferences.Editor e = context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).edit();
+        e.putString(KEY_FRONT_IMAGE, front);
         e.commit();
     }
 }
