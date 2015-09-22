@@ -23,8 +23,7 @@ public class Config {
     private static final String KEY_WEIGHT = "weight";
     private static final String KEY_STERNUM = "sternum";
     private static final String KEY_CHEST_CIRCUMFERENCE = "chest_circumference";
-
-
+    private static final String KEY_UPDATE_DATE = "update_date";
 
 
     public static int getCachedMethod(Context context){
@@ -108,6 +107,17 @@ public class Config {
     public static void cacheChestCircumference(Context context,String chest){
         SharedPreferences.Editor e = context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).edit();
         e.putString(KEY_CHEST_CIRCUMFERENCE, chest);
+        e.commit();
+    }
+
+
+    public static String getCachedUpdateDate(Context context){
+        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(KEY_UPDATE_DATE,"First update");
+    }
+
+    public static void cacheUpdateDate(Context context,String update){
+        SharedPreferences.Editor e = context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).edit();
+        e.putString(KEY_UPDATE_DATE, update);
         e.commit();
     }
 }

@@ -26,7 +26,12 @@
             android:backgroundTint="@color/abc_background_cache_hint_selector_material_dark"
             android:text="@string/monthly_input"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
-
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/btnEdit"
+            android:text="@string/edit"/>
     </LinearLayout>
     <LinearLayout
         android:paddingLeft="10dp"
@@ -45,6 +50,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/et_height"
             android:numeric="integer"
+            android:enabled="false"
             android:gravity="center_horizontal"
             android:inputType="number"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -68,6 +74,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/et_weight"
             android:numeric="integer"
+            android:enabled="false"
             android:gravity="center_horizontal"
 
             android:inputType="number"
@@ -92,6 +99,7 @@
             android:layout_width="0dp"
             android:numeric="integer"
             android:inputType="number"
+            android:enabled="false"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
 
@@ -116,7 +124,7 @@
             android:layout_width="0dp"
             android:numeric="integer"
             android:gravity="center_horizontal"
-
+            android:enabled="false"
             android:inputType="number"
             android:layout_height="wrap_content"
             android:id="@+id/et_sternum"
@@ -144,6 +152,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:numeric="integer"
+            android:enabled="false"
             android:gravity="center_horizontal"
 
             android:inputType="number"
@@ -168,7 +177,7 @@
             android:layout_height="wrap_content"
             android:numeric="integer"
             android:gravity="center_horizontal"
-
+            android:enabled="false"
             android:inputType="number"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_weight="1"/>
@@ -193,6 +202,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:id="@+id/tvLastUpdate"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#FF0000" />
     <Button
@@ -201,7 +211,7 @@
         android:text="@string/save"
         android:id="@+id/btnMonthSave"
         android:gravity="center_horizontal" />
-        
+
 
 
     </LinearLayout>
