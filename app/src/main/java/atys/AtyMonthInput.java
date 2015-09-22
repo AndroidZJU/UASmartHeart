@@ -227,6 +227,7 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                 etChestCircumference.setEnabled(false);
                 etSternum.setEnabled(false);
                 break;
+
         }
     }
 }
