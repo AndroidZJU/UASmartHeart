@@ -3,23 +3,29 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="CPRPreguide"
+        android:id="@+id/textView3" />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
         android:text="CPR"
         android:id="@+id/btnCPR"
         android:layout_gravity="center_vertical" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Preguide"
-        android:id="@+id/textView3" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/call_911"
         android:id="@+id/btnCall" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Some preguide"/>
 </LinearLayout>
