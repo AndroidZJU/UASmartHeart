@@ -28,6 +28,7 @@ import java.io.InputStream;
 import java.util.Calendar;
 
 import tools.DialogActivity;
+import tools.DialogActivitySide;
 import tools.ShowFront;
 import tools.ShowSide;
 
@@ -194,6 +195,8 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                 intent.setClass(AtyMonthInput.this, DialogActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.dialog_enter, 0);
+//                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//                startActivityForResult(intent, Config.CAMERA_REQUEST_COED);
                 break;
 
             case R.id.btnFrontView:
@@ -201,7 +204,10 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                 break;
 
             case R.id.btnSideUpload:
-
+                Intent i = new Intent();
+                i.setClass(AtyMonthInput.this, DialogActivitySide.class);
+                startActivity(i);
+                overridePendingTransition(R.anim.dialog_enter, 0);
                 break;
 
             case R.id.btnSideView:

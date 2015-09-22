@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.camera"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/heart"
@@ -45,6 +47,7 @@
         <activity android:name="tools.ShowSide"/>
         <activity android:name="tools.DialogActivity"
             android:theme="@style/Theme_dialog" />
-
+        <activity android:name="tools.DialogActivitySide"
+            android:theme="@style/Theme_dialog" />
     </application>
 </manifest>

@@ -29,7 +29,7 @@ import java.io.InputStream;
 /**
  * Created by Fernando on 15/9/22.
  */
-public class DialogActivity extends Activity implements View.OnClickListener {
+public class DialogActivitySide extends Activity implements View.OnClickListener {
 
     private Button button_cancle,btnphoto,btncamera;//取消按钮
 
@@ -66,7 +66,7 @@ public class DialogActivity extends Activity implements View.OnClickListener {
     //重写finish（）方法，加入关闭时的动画
     public void finish() {
         super.finish();
-        DialogActivity.this.overridePendingTransition(0, R.anim.dialog_exit);
+        DialogActivitySide.this.overridePendingTransition(0, R.anim.dialog_exit);
     }
 
 
@@ -184,7 +184,7 @@ public class DialogActivity extends Activity implements View.OnClickListener {
 
             byte[] bytes = stream.toByteArray();
             String img  = new String(Base64.encodeToString(bytes, Base64.DEFAULT));
-            Config.cacheUpdateFrontImage(DialogActivity.this,img);
+            Config.cacheUpdateSideImage(DialogActivitySide.this,img);
         }
     }
 
