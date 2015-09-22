@@ -144,14 +144,16 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/photo_of_front_chest"/>
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Upload"
             android:gravity="center_horizontal"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/btnFrontUpload"/>
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="View"
             android:gravity="center_horizontal"
@@ -174,14 +176,16 @@
             android:text="@string/photo_of_side_chest"/>
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="Upload"
                 android:gravity="center_horizontal"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/btnSideUpload"/>
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="View"
                 android:gravity="center_horizontal"

@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.fengnanyue.uasmartheart.Config;
 import com.fengnanyue.uasmartheart.R;
@@ -185,6 +186,7 @@ public class DialogActivitySide extends Activity implements View.OnClickListener
             byte[] bytes = stream.toByteArray();
             String img  = new String(Base64.encodeToString(bytes, Base64.DEFAULT));
             Config.cacheUpdateSideImage(DialogActivitySide.this,img);
+            Toast.makeText(DialogActivitySide.this, "Upload successfully", Toast.LENGTH_SHORT).show();
         }
     }
 

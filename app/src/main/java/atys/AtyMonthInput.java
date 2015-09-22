@@ -27,7 +27,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Calendar;
 
-import tools.DialogActivity;
+import tools.DialogActivityFront;
 import tools.DialogActivitySide;
 import tools.ShowFront;
 import tools.ShowSide;
@@ -192,7 +192,7 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                 break;
             case R.id.btnFrontUpload:
                 Intent intent = new Intent();
-                intent.setClass(AtyMonthInput.this, DialogActivity.class);
+                intent.setClass(AtyMonthInput.this, DialogActivityFront.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.dialog_enter, 0);
 //                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);

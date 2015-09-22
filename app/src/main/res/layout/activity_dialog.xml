@@ -23,6 +23,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_alignParentLeft="true"
         android:text="Camera"
         android:background="@drawable/cancle_button_selecter"
@@ -33,6 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Photo Library"
             android:background="@drawable/cancle_button_selecter"
             />
@@ -41,6 +43,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_alignParentLeft="true"
             android:text="Cancel"
             android:background="@drawable/cancle_button_selecter"

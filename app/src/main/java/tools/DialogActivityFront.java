@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.fengnanyue.uasmartheart.Config;
 import com.fengnanyue.uasmartheart.R;
@@ -29,7 +30,7 @@ import java.io.InputStream;
 /**
  * Created by Fernando on 15/9/22.
  */
-public class DialogActivity extends Activity implements View.OnClickListener {
+public class DialogActivityFront extends Activity implements View.OnClickListener {
 
     private Button button_cancle,btnphoto,btncamera;//取消按钮
 
@@ -66,7 +67,7 @@ public class DialogActivity extends Activity implements View.OnClickListener {
     //重写finish（）方法，加入关闭时的动画
     public void finish() {
         super.finish();
-        DialogActivity.this.overridePendingTransition(0, R.anim.dialog_exit);
+        DialogActivityFront.this.overridePendingTransition(0, R.anim.dialog_exit);
     }
 
 
@@ -184,7 +185,8 @@ public class DialogActivity extends Activity implements View.OnClickListener {
 
             byte[] bytes = stream.toByteArray();
             String img  = new String(Base64.encodeToString(bytes, Base64.DEFAULT));
-            Config.cacheUpdateFrontImage(DialogActivity.this,img);
+            Config.cacheUpdateFrontImage(DialogActivityFront.this,img);
+            Toast.makeText(DialogActivityFront.this,"Upload successfully",Toast.LENGTH_SHORT).show();
         }
     }
 

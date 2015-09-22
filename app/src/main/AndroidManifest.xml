@@ -45,7 +45,7 @@
         <activity android:name="atys.AtyPreGuide"/>
         <activity android:name="tools.ShowFront"/>
         <activity android:name="tools.ShowSide"/>
-        <activity android:name="tools.DialogActivity"
+        <activity android:name="tools.DialogActivityFront"
             android:theme="@style/Theme_dialog" />
         <activity android:name="tools.DialogActivitySide"
             android:theme="@style/Theme_dialog" />
