@@ -60,6 +60,13 @@ public class DialogActivity extends Activity implements View.OnClickListener {
             case R.id.button_cancle:
                 finish();
                 break;
+            case R.id.btnCamera:
+
+                finish();
+                break;
+            case R.id.btnPhoto:
+                finish();
+                break;
         }
     }
 

@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Calendar;
 
+import tools.DialogActivity;
 import tools.ShowFront;
 import tools.ShowSide;
 
@@ -174,6 +175,7 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
             Config.cacheUpdateFrontImage(AtyMonthInput.this,img);
         }
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -188,9 +190,10 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                 etSternum.setEnabled(true);
                 break;
             case R.id.btnFrontUpload:
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("image/*");
-                startActivityForResult(intent,Config.PHOTO_REQUEST_COED);
+                Intent intent = new Intent();
+                intent.setClass(AtyMonthInput.this, DialogActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.dialog_enter, 0);
                 break;
 
             case R.id.btnFrontView:
