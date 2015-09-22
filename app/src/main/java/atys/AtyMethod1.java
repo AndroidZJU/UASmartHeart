@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.speech.tts.TextToSpeech;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fengnanyue.uasmartheart.Config;
 import com.fengnanyue.uasmartheart.R;
 
 import java.util.Locale;
@@ -20,6 +22,7 @@ public class AtyMethod1 extends Activity {
     private TextToSpeech mTextToSpeech;
     private Handler msgHandler;
     private Thread thread;
+    private TextView tvAge,tvName1;
     public volatile boolean exit;
     private SoundPool sp;
     private int soundId;
@@ -28,6 +31,10 @@ public class AtyMethod1 extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_method_1);
+        tvName1 = (TextView)findViewById(R.id.tvName_1);
+        tvAge=(TextView)findViewById(R.id.tvAge);
+        tvName1.setText(Config.getCachedName(AtyMethod1.this));
+        tvAge.setText(Config.getCachedAge(AtyMethod1.this));
         exit = false;
         sp = new SoundPool(1, AudioManager.STREAM_MUSIC,0);
         soundId = sp.load(this, R.raw.note1, 1);
