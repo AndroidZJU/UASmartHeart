@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Calendar;
 
+import at.markushi.ui.CircleButton;
 import tools.DialogActivityFront;
 import tools.DialogActivitySide;
 import tools.ShowFront;
@@ -39,8 +40,8 @@ import tools.ShowSide;
 public class AtyMonthInput extends Activity implements View.OnClickListener {
 
     private MaterialEditText etHeight,etWeight,etChestCircumference,etSternum;
-    private Button btnMonthtoMain,btnEdit,btnFrontUpload,
-            btnFrontView,btnSideView,btnSideUpload;
+    private Button btnMonthtoMain,btnEdit;
+    private CircleButton btnFrontUpload,btnSideUpload,btnFrontView,btnSideView;
     private CircularProgressButton btnMonthSave;
     private TextView tvLastUpdate;
     private int mYear,mMonth,mDay,age;
@@ -50,10 +51,10 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_monthly_input);
-        btnFrontUpload=(Button)findViewById(R.id.btnFrontUpload);
-        btnFrontView=(Button)findViewById(R.id.btnFrontView);
-        btnSideUpload=(Button)findViewById(R.id.btnSideUpload);
-        btnSideView=(Button)findViewById(R.id.btnSideView);
+        btnFrontUpload= (CircleButton) findViewById(R.id.btnFrontUpload);
+        btnFrontView= (CircleButton) findViewById(R.id.btnFrontView);
+        btnSideUpload= (CircleButton) findViewById(R.id.btnSideUpload);
+        btnSideView= (CircleButton) findViewById(R.id.btnSideView);
         btnMonthSave = (CircularProgressButton) findViewById(R.id.btnMonthSave);
         btnMonthtoMain=(Button)findViewById(R.id.btnMonthtoMain);
         btnEdit=(Button)findViewById(R.id.btnEdit);

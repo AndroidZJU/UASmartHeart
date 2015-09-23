@@ -156,22 +156,30 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/photo_of_front_chest"/>
-        <Button
-            android:layout_width="wrap_content"
+        <at.markushi.ui.CircleButton
+            android:layout_width="70dip"
             android:layout_weight="1"
+            android:layout_gravity="center"
             android:singleLine="true"
-            android:layout_height="wrap_content"
+            app:cb_color="@color/cpb_blue"
+            app:cb_pressedRingWidth="8dip"
+            android:layout_height="50dip"
             android:text="Upload"
-            android:gravity="center_horizontal"
+            android:src="@drawable/upload"
+            android:gravity="center"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/btnFrontUpload"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:singleLine="true"
+        <at.markushi.ui.CircleButton
+            android:layout_width="70dip"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="View"
-            android:gravity="center_horizontal"
+            android:layout_gravity="center"
+            android:singleLine="true"
+            app:cb_color="@color/cpb_blue"
+            app:cb_pressedRingWidth="8dip"
+            android:layout_height="50dip"
+            android:text="Upload"
+            android:src="@drawable/view"
+            android:gravity="center"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/btnFrontView"/>
 
@@ -190,22 +198,30 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/photo_of_side_chest"/>
 
-            <Button
-                android:layout_width="wrap_content"
+            <at.markushi.ui.CircleButton
+                android:layout_width="70dip"
                 android:layout_weight="1"
                 android:singleLine="true"
-                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cb_color="@color/cpb_blue"
+                app:cb_pressedRingWidth="8dip"
+                android:layout_height="50dip"
                 android:text="Upload"
-                android:gravity="center_horizontal"
+                android:src="@drawable/upload"
+                android:gravity="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/btnSideUpload"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:singleLine="true"
+            <at.markushi.ui.CircleButton
+                android:layout_width="70dip"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="View"
-                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:layout_gravity="center"
+                app:cb_color="@color/cpb_blue"
+                app:cb_pressedRingWidth="8dip"
+                android:layout_height="50dip"
+                android:text="Upload"
+                android:src="@drawable/view"
+                android:gravity="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/btnSideView"/>
 
@@ -236,14 +252,15 @@
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:layout_height="wrap_content"
-        app:cpb_textIdle="Save"
+        app:cpb_textIdle="@string/save_monthinput"
         android:textColor="#fff"
+        app:cpb_cornerRadius="100dp"
         app:cpb_iconComplete="@drawable/ic_done_black_32dp_1x"
         android:id="@+id/btnMonthSave"
         android:layout_gravity="center_horizontal"
 
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         />
         <!--app:cpb_cornerRadius="48dp"-->
 

@@ -53,7 +53,6 @@ public class AtyInput extends Activity implements View.OnClickListener {
         daTextView.setOnClickListener(this);
         daTextView.setText(Config.getCachedDate(AtyInput.this));
         btnSave= (CircularProgressButton) findViewById(R.id.btnSave);
-        btnSave.setProgress(0);
         btnSave.setOnClickListener(this);
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);
@@ -90,6 +89,8 @@ public class AtyInput extends Activity implements View.OnClickListener {
                 break;
 
             case R.id.btnSave:
+                btnSave.setIndeterminateProgressMode(true);
+
                 btnSave.setProgress(0);
                 btnSave.setProgress(50);
                 btnSave.setProgress(75);

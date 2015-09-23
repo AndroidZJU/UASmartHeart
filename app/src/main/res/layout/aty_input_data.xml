@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:custom="http://schemas.android.com/apk/res-auto"
-    xmlns:app="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:background="#FFFFFF"
@@ -135,12 +134,14 @@
         android:paddingRight="10dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        app:cpb_textIdle="Save"
+        app:cpb_textIdle="@string/save_monthinput"
         android:textColor="#fff"
-        app:cpb_textComplete="Complete"
+        app:cpb_iconComplete="@drawable/ic_done_black_32dp_1x"
 
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+
+        android:gravity="center"
         android:id="@+id/btnSave" />
 
 
