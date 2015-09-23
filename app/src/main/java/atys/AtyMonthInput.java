@@ -42,6 +42,7 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
             btnFrontView,btnSideView,btnSideUpload;
     private TextView tvLastUpdate;
     private int mYear,mMonth,mDay,age;
+    private long currentmonths;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -221,7 +222,9 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                 Config.cacheWeight(AtyMonthInput.this, etWeight.getText().toString());
                 Config.cacheSternum(AtyMonthInput.this, etSternum.getText().toString());
                 Config.cacheChestCircumference(AtyMonthInput.this, etChestCircumference.getText().toString());
-                Config.cacheUpdateDate(AtyMonthInput.this,mYear+" - "+(mMonth+1)+" - "+mDay);
+                Config.cacheUpdateDate(AtyMonthInput.this, mYear + " - " + (mMonth + 1) + " - " + mDay);
+                currentmonths=(mYear-2015)*12+mMonth+1+mDay/30;
+                Config.cacheMonths(AtyMonthInput.this,currentmonths);
                 etHeight.setEnabled(false);
                 etWeight.setEnabled(false);
                 etChestCircumference.setEnabled(false);

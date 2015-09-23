@@ -11,6 +11,7 @@ import android.util.Base64;
  */
 public class Config {
     public static final String APP_ID = "com.fengnanyue.uasmartheart";
+    public static final int NOTIFICATION_ID=1200;
     private static final String KEY_METHOD ="CPRmethod";
     public static final int RESULT_METHOD1 =1001;
     public static final int RESULT_METHOD2 =1002;
@@ -32,6 +33,7 @@ public class Config {
     public static final int CAMERA_REQUEST_COED=1;
     public static final int PHOTO_REQUEST_COED=2;
     public static final int CROP_REQUEST_COED=3;
+    private static final String KEY_MONTHS = "key_months";
 
     public static int getCachedMethod(Context context){
         return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getInt(KEY_METHOD,RESULT_NONE);
@@ -147,6 +149,15 @@ public class Config {
         e.commit();
     }
 
+    public static long getCachedMonths(Context context){
+        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getLong(KEY_MONTHS, 1);
+    }
+
+    public static void cacheMonths(Context context,long months){
+        SharedPreferences.Editor e = context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).edit();
+        e.putLong(KEY_MONTHS, months);
+        e.commit();
+    }
     public static Bitmap convertStringToIcon(String st)
     {
         // OutputStream out;
