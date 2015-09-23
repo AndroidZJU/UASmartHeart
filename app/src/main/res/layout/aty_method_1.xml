@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout2">
     <TextView
         android:layout_width="wrap_content"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Name: "
+        android:textColor="#00f"
         android:id="@+id/textView" />
     <TextView
-        android:layout_width="80dp"
+        android:layout_width="120dp"
+        android:layout_weight="1.5"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -23,28 +28,68 @@
 
         <TextView
             android:layout_width="50dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
+            android:textColor="#00f"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Age: "/>
         <TextView
             android:layout_width="wrap_content"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/tvAge"/>
 
+        <TextView
+            android:layout_width="80dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="#00f"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Rate: "/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="#f00"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/tvRate"/>
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="#00f"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Depth: "/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="#f00"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/tvDepth"/>
 
 
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:src="@drawable/baby_9"
-        android:layout_alignTop="@+id/tv_hand1" />
+        android:id="@+id/ivBaby"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="false"
+        android:layout_marginRight="34dp"
+        android:layout_marginEnd="34dp"
+        android:layout_alignBottom="@+id/tv_hand1"
+        android:layout_below="@+id/linearLayout2" />
+
+
 
         <ImageView
             android:layout_width="200dp"
@@ -52,26 +97,45 @@
             android:src="@drawable/hand1_9"
             android:id="@+id/tv_hand1"
             android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="170dp"
-            android:layout_marginStart="170dp" />
-    </RelativeLayout>
+            android:layout_centerHorizontal="true" />
+
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="horizontal">
-
         <TextView
-            android:layout_width="50dp"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Elapsed Time"
+            android:textColor="#00f"
+            />
+        <TextView
+            android:layout_width="120dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
+            android:textColor="#f00"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Age: "/>
+            android:text="00:00"
+             />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="0dp"
+            android:gravity="center_vertical"
+            android:textColor="#f00"
+            android:singleLine="true"
+            android:text="Perform CPR with the hand wearing the watch! "/>
 
 
 
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>
