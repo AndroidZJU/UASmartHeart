@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.speech.tts.TextToSpeech;
+import android.view.animation.ScaleAnimation;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,20 +23,34 @@ import java.util.Locale;
 public class AtyMethod1 extends Activity {
     private TextToSpeech mTextToSpeech;
     private Handler msgHandler;
-    private Thread thread;
+    private Thread thread,thread_1;
     private TextView tvAge,tvName1;
     public volatile boolean exit;
     private SoundPool sp;
     private int soundId;
+    private ScaleAnimation sa,sa1;
+    private ImageView hand_1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_method_1);
+        hand_1=(ImageView)findViewById(R.id.tv_hand1);
+
+//        sa = new ScaleAnimation(0,1,0,1, Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
+//        sa1 = new ScaleAnimation(1,0,1,0, Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
+//        sa.setDuration(1000);sa1.setDuration(1000);
+//        sa.setRepeatCount(10);sa1.setRepeatCount(10);
+//        hand_1.setAnimation(sa);hand_1.setAnimation(sa1);
+
+
+
+
         tvName1 = (TextView)findViewById(R.id.tvName_1);
         tvAge=(TextView)findViewById(R.id.tvAge);
         tvName1.setText(Config.getCachedName(AtyMethod1.this));
-        tvAge.setText(Config.getCachedAge(AtyMethod1.this)+"");
+        tvAge.setText(Config.getCachedAge(AtyMethod1.this) + "");
         exit = false;
         sp = new SoundPool(1, AudioManager.STREAM_MUSIC,0);
         soundId = sp.load(this, R.raw.note1, 1);
@@ -53,6 +69,9 @@ public class AtyMethod1 extends Activity {
 
                     case R.string.release_fully:
                         Toast.makeText(AtyMethod1.this,"Release Fully!",Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.string.scale_animation:
                         break;
                     default:
                         break;
@@ -77,7 +96,7 @@ public class AtyMethod1 extends Activity {
                 try {
                     while(!exit) {
                         sleep(5000);
-//                        sp.play(soundId, 1, 1, 0, 0, 1);
+                        sp.play(soundId, 1, 1, 0, 0, 1);
                         sleep(1000);
                         Message msg = msgHandler.obtainMessage();
                         msg.arg1 = R.string.push_harder;
@@ -91,6 +110,18 @@ public class AtyMethod1 extends Activity {
             }
         };
         thread.start();
+
+//        thread_1 = new Thread(){
+//            @Override
+//            public void run() {
+//                while(!exit){
+//                    Message msg = msgHandler.obtainMessage();
+//                    msg.arg1 = R.string.scale_animation;
+//                    msgHandler.sendMessage(msg);
+//                }
+//            }
+//        };
+//        thread_1.start();
 
 
 

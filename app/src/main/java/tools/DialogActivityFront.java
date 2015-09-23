@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Base64;
-import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -34,7 +33,7 @@ public class DialogActivityFront extends Activity implements View.OnClickListene
 
     private Button button_cancle,btnphoto,btncamera;//取消按钮
 
-    private static int screenHeight;
+    private static int screenHeight,screenHeight1,screenWidth1;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -133,11 +132,13 @@ public class DialogActivityFront extends Activity implements View.OnClickListene
         Intent intent = new Intent("com.android.camera.action.CROP");
         intent.setDataAndType(uri, "image/*");
         intent.putExtra("crop", "true");
-        intent.putExtra("aspectX", 1);
-        intent.putExtra("aspectY",1);
-        DisplayMetrics dm = new DisplayMetrics();getWindowManager().getDefaultDisplay().getMetrics(dm);
-        intent.putExtra("outputX",dm.widthPixels);
-        intent.putExtra("outputY",dm.heightPixels);
+        screenHeight1 = getWindow().getWindowManager().getDefaultDisplay().getHeight();//获取屏幕高度
+        screenWidth1 = getWindow().getWindowManager().getDefaultDisplay().getWidth();//获取屏幕高度
+
+        intent.putExtra("aspectX",screenWidth1 );
+        intent.putExtra("aspectY",screenHeight1);
+        intent.putExtra("outputX",screenWidth1);
+        intent.putExtra("outputY",screenHeight1);
         intent.putExtra("return-data", true);
         startActivityForResult(intent, Config.CROP_REQUEST_COED);
 
