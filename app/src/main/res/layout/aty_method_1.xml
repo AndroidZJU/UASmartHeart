@@ -80,14 +80,11 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="120dp"
         android:src="@drawable/baby_9"
         android:id="@+id/ivBaby"
-        android:layout_alignParentRight="false"
-        android:layout_alignParentEnd="false"
-        android:layout_marginRight="34dp"
-        android:layout_marginEnd="34dp"
-        android:layout_alignBottom="@+id/tv_hand1"
-        android:layout_below="@+id/linearLayout2" />
+        android:layout_below="@+id/linearLayout2"
+        android:layout_above="@+id/linearLayout" />
 
 
 
@@ -96,8 +93,11 @@
             android:layout_height="200dp"
             android:src="@drawable/hand1_9"
             android:id="@+id/tv_hand1"
+            android:layout_marginLeft="107dp"
+            android:layout_marginStart="107dp"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignLeft="@+id/linearLayout"
+            android:layout_alignStart="@+id/linearLayout" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -106,7 +106,8 @@
         android:layout_marginRight="10dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
         <TextView
             android:layout_width="wrap_content"
             android:layout_weight="1"
