@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dd.CircularProgressButton;
 import com.fengnanyue.uasmartheart.Config;
 import com.fengnanyue.uasmartheart.MainActivity;
 import com.fengnanyue.uasmartheart.R;
@@ -38,8 +39,9 @@ import tools.ShowSide;
 public class AtyMonthInput extends Activity implements View.OnClickListener {
 
     private MaterialEditText etHeight,etWeight,etChestCircumference,etSternum;
-    private Button btnMonthSave,btnMonthtoMain,btnEdit,btnFrontUpload,
+    private Button btnMonthtoMain,btnEdit,btnFrontUpload,
             btnFrontView,btnSideView,btnSideUpload;
+    private CircularProgressButton btnMonthSave;
     private TextView tvLastUpdate;
     private int mYear,mMonth,mDay,age;
     private long currentmonths;
@@ -52,7 +54,7 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
         btnFrontView=(Button)findViewById(R.id.btnFrontView);
         btnSideUpload=(Button)findViewById(R.id.btnSideUpload);
         btnSideView=(Button)findViewById(R.id.btnSideView);
-        btnMonthSave = (Button)findViewById(R.id.btnMonthSave);
+        btnMonthSave = (CircularProgressButton) findViewById(R.id.btnMonthSave);
         btnMonthtoMain=(Button)findViewById(R.id.btnMonthtoMain);
         btnEdit=(Button)findViewById(R.id.btnEdit);
 
@@ -61,7 +63,7 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
         etWeight= (MaterialEditText) findViewById(R.id.et_weight);
         etChestCircumference= (MaterialEditText) findViewById(R.id.et_chestcircumference);
         etSternum= (MaterialEditText) findViewById(R.id.et_sternum);
-        tvLastUpdate=(TextView)findViewById(R.id.tvLastUpdate);
+        tvLastUpdate= (TextView) findViewById(R.id.tvLastUpdate);
 
         btnFrontUpload.setOnClickListener(this);
         btnFrontView.setOnClickListener(this);
@@ -216,18 +218,31 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                 break;
 
             case R.id.btnMonthSave:
-                Toast.makeText(AtyMonthInput.this, "Saved successful", Toast.LENGTH_SHORT).show();
+                btnMonthSave.setIndeterminateProgressMode(true);
+                btnMonthSave.setProgress(10);
                 Config.cacheHeight(AtyMonthInput.this, etHeight.getText().toString());
+                btnMonthSave.setProgress(20);
                 Config.cacheWeight(AtyMonthInput.this, etWeight.getText().toString());
+                btnMonthSave.setProgress(30);
                 Config.cacheSternum(AtyMonthInput.this, etSternum.getText().toString());
+                btnMonthSave.setProgress(40);
                 Config.cacheChestCircumference(AtyMonthInput.this, etChestCircumference.getText().toString());
+                btnMonthSave.setProgress(50);
                 Config.cacheUpdateDate(AtyMonthInput.this, mYear + " - " + (mMonth + 1) + " - " + mDay);
+                btnMonthSave.setProgress(60);
                 currentmonths=(mYear-2015)*12+mMonth+1+mDay/30;
                 Config.cacheMonths(AtyMonthInput.this,currentmonths);
+                btnMonthSave.setProgress(70);
                 etHeight.setEnabled(false);
+                btnMonthSave.setProgress(80);
                 etWeight.setEnabled(false);
+                btnMonthSave.setProgress(90);
                 etChestCircumference.setEnabled(false);
+                btnMonthSave.setProgress(100);
+
                 etSternum.setEnabled(false);
+                Toast.makeText(AtyMonthInput.this, "Saved successful", Toast.LENGTH_SHORT).show();
+                btnMonthSave.setProgress(0);
                 break;
 
         }

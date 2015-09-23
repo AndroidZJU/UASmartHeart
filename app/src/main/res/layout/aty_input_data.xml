@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:background="#FFFFFF"
 
     android:layout_height="match_parent">
@@ -127,15 +130,19 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:src="@drawable/cprwoman_9"/>
-    <Button
+    <com.dd.CircularProgressButton
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Save"
+        app:cpb_textIdle="Save"
+        android:textColor="#fff"
+        app:cpb_textComplete="Complete"
+
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
         android:id="@+id/btnSave" />
+
 
     </LinearLayout>
 

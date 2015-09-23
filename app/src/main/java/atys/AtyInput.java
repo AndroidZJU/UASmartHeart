@@ -12,6 +12,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dd.CircularProgressButton;
 import com.fengnanyue.uasmartheart.Config;
 import com.fengnanyue.uasmartheart.MainActivity;
 import com.fengnanyue.uasmartheart.R;
@@ -23,7 +24,7 @@ import java.util.Calendar;
  */
 public class AtyInput extends Activity implements View.OnClickListener {
     private Button btnBacktoMain,btnMonthInput;
-    private Button btnSave;
+    private CircularProgressButton btnSave;
     private RadioButton btnMale,btnFemale;
     private TextView daTextView;
     private TextView tvName;
@@ -51,7 +52,8 @@ public class AtyInput extends Activity implements View.OnClickListener {
         daTextView = (TextView) findViewById(R.id.tv_date);
         daTextView.setOnClickListener(this);
         daTextView.setText(Config.getCachedDate(AtyInput.this));
-        btnSave=(Button)findViewById(R.id.btnSave);
+        btnSave= (CircularProgressButton) findViewById(R.id.btnSave);
+        btnSave.setProgress(0);
         btnSave.setOnClickListener(this);
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);
@@ -88,7 +90,12 @@ public class AtyInput extends Activity implements View.OnClickListener {
                 break;
 
             case R.id.btnSave:
+                btnSave.setProgress(0);
+                btnSave.setProgress(50);
+                btnSave.setProgress(75);
+                btnSave.setProgress(100);
                 Toast.makeText(AtyInput.this,"Saved successful",Toast.LENGTH_SHORT).show();
+                btnSave.setProgress(0);
                 if (btnFemale.isChecked()){
                     Config.cacheGender(AtyInput.this,Config.FEMALE);
                 }
