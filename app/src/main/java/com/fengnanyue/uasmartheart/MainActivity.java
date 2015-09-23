@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
         mDay = c.get(Calendar.DAY_OF_MONTH);
         months=(mYear-2015)*12+mMonth+1+mDay/30;
         updateMonths = Config.getCachedMonths(MainActivity.this);
-        if ((months-updateMonths)>=3) {
+        if ((months-updateMonths)>=1) {
             Builder builder = new NotificationCompat.Builder(MainActivity.this);
             builder.setSmallIcon(R.drawable.heart);
             builder.setContentTitle("Input out of date!");
