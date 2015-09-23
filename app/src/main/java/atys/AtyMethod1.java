@@ -16,6 +16,8 @@ import com.fengnanyue.uasmartheart.Config;
 import com.fengnanyue.uasmartheart.R;
 
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by Fernando on 15/9/17.
@@ -24,10 +26,13 @@ public class AtyMethod1 extends Activity {
     private TextToSpeech mTextToSpeech;
     private Handler msgHandler;
     private Thread thread,thread_1;
-    private TextView tvAge,tvName1;
+    private TextView tvAge,tvName1,tvTimer;
     public volatile boolean exit;
     private SoundPool sp;
     private int soundId;
+    int i,j;
+    private Timer timer = null;
+    private TimerTask task = null;
     private ScaleAnimation sa,sa1;
     private ImageView hand_1;
 
@@ -45,8 +50,8 @@ public class AtyMethod1 extends Activity {
 //        hand_1.setAnimation(sa);hand_1.setAnimation(sa1);
 
 
-
-
+        i=j=0;
+        tvTimer=(TextView)findViewById(R.id.tvTimer);
         tvName1 = (TextView)findViewById(R.id.tvName_1);
         tvAge=(TextView)findViewById(R.id.tvAge);
         tvName1.setText(Config.getCachedName(AtyMethod1.this));
@@ -54,7 +59,7 @@ public class AtyMethod1 extends Activity {
         exit = false;
         sp = new SoundPool(1, AudioManager.STREAM_MUSIC,0);
         soundId = sp.load(this, R.raw.note1, 1);
-
+        startTime();
         msgHandler = new Handler(){
             @Override
             public void handleMessage(Message msg) {
@@ -123,13 +128,41 @@ public class AtyMethod1 extends Activity {
 //        };
 //        thread_1.start();
 
-
-
     }
 
+    private Handler mHandler = new Handler() {
+        public void handleMessage(Message msg){
+            if(i>=0&&i<10){
+                tvTimer.setText(msg.arg2+": 0"+msg.arg1);
+            }else {
+                tvTimer.setText(msg.arg2 + ": " + msg.arg1);
+            }
+            startTime();
+        }
+    };
+    public void startTime(){
+        timer = new Timer();
+        task = new TimerTask() {
+            @Override
+            public void run() {
+                i++;
+                if(i>=60){
+                    i=0;j++;
+                }
+                Message message = mHandler.obtainMessage();
+                message.arg1 = i;message.arg2=j;
+                mHandler.sendMessage(message);
+            }
+        };
+        timer.schedule(task,1000);
+    }
+    public void stopTime(){
+        timer.cancel();
+    }
     @Override
     protected void onDestroy() {
         exit = true;
+        stopTime();
         if(mTextToSpeech!=null)
             mTextToSpeech.shutdown();
         super.onDestroy();

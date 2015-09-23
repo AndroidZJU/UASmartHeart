@@ -122,6 +122,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:textColor="#f00"
+            android:id="@+id/tvTimer"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="00:00"
              />
