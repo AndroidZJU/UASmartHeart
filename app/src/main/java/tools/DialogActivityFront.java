@@ -189,7 +189,7 @@ public class DialogActivityFront extends Activity implements View.OnClickListene
             Toast.makeText(DialogActivityFront.this,"Upload successfully",Toast.LENGTH_SHORT).show();
         }
     }
-    
+
 
     @Override
     protected void onDestroy() {
