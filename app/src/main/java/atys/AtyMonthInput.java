@@ -11,13 +11,13 @@ import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fengnanyue.uasmartheart.Config;
 import com.fengnanyue.uasmartheart.MainActivity;
 import com.fengnanyue.uasmartheart.R;
+import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -37,7 +37,7 @@ import tools.ShowSide;
  */
 public class AtyMonthInput extends Activity implements View.OnClickListener {
 
-    private EditText etHeight,etWeight,etChestCircumference,etSternum;
+    private MaterialEditText etHeight,etWeight,etChestCircumference,etSternum;
     private Button btnMonthSave,btnMonthtoMain,btnEdit,btnFrontUpload,
             btnFrontView,btnSideView,btnSideUpload;
     private TextView tvLastUpdate;
@@ -56,10 +56,11 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
         btnMonthtoMain=(Button)findViewById(R.id.btnMonthtoMain);
         btnEdit=(Button)findViewById(R.id.btnEdit);
 
-        etHeight= (EditText) findViewById(R.id.et_height);
-        etWeight= (EditText) findViewById(R.id.et_weight);
-        etChestCircumference= (EditText) findViewById(R.id.et_chestcircumference);
-        etSternum= (EditText) findViewById(R.id.et_sternum);
+
+        etHeight= (MaterialEditText) findViewById(R.id.et_height);
+        etWeight= (MaterialEditText) findViewById(R.id.et_weight);
+        etChestCircumference= (MaterialEditText) findViewById(R.id.et_chestcircumference);
+        etSternum= (MaterialEditText) findViewById(R.id.et_sternum);
         tvLastUpdate=(TextView)findViewById(R.id.tvLastUpdate);
 
         btnFrontUpload.setOnClickListener(this);
@@ -69,13 +70,11 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
         btnEdit.setOnClickListener(this);
         btnMonthSave.setOnClickListener(this);
         btnMonthtoMain.setOnClickListener(this);
-
         tvLastUpdate.setText(Config.getCachedUpdateDate(AtyMonthInput.this));
         etHeight.setText(Config.getCachedHeight(AtyMonthInput.this));
         etWeight.setText(Config.getCachedWeight(AtyMonthInput.this));
         etSternum.setText(Config.getCachedSternum(AtyMonthInput.this));
         etChestCircumference.setText(Config.getCachedChestCircumference(AtyMonthInput.this));
-
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH);
