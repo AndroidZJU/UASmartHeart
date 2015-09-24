@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.fengnanyue.uasmartheart.Config;
 import com.fengnanyue.uasmartheart.R;
 
@@ -42,7 +44,7 @@ public class AtyMethod1 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_method_1);
         hand_1=(ImageView)findViewById(R.id.tv_hand1);
-
+        YoYo.with(Techniques.Pulse).duration(1000).playOn(hand_1);
 //        sa = new ScaleAnimation(0,1,0,1, Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
 //        sa1 = new ScaleAnimation(1,0,1,0, Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
 //        sa.setDuration(1000);sa1.setDuration(1000);
