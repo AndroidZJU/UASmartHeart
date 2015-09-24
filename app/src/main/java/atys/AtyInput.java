@@ -40,7 +40,6 @@ public class AtyInput extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_input_data);
-
         findViewById(R.id.rootviewBasic).setOnClickListener(this);
         btnMonthInput= (FButton) findViewById(R.id.btnMonthInput);
         btnMonthInput.setOnClickListener(this);
@@ -135,6 +134,9 @@ public class AtyInput extends Activity implements View.OnClickListener {
 
                     btnSave.setProgress(0);
                     btnSave.setProgress(50);
+                    YoYo.with(Techniques.Wobble)
+                        .duration(700)
+                        .playOn(findViewById(R.id.btnMonthInput));
                     btnSave.setProgress(75);
                     btnSave.setProgress(100);
                     Toast.makeText(AtyInput.this, "Saved successful", Toast.LENGTH_SHORT).show();

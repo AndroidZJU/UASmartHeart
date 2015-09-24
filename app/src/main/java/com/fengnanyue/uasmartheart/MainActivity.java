@@ -10,23 +10,38 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationCompat.Builder;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
+
+import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.romainpiel.shimmer.Shimmer;
+import com.romainpiel.shimmer.ShimmerTextView;
+import com.victor.ringbutton.RingButton;
 
 import java.util.Calendar;
 
+import atys.AtyInfo;
 import atys.AtyInput;
+import atys.AtyLink;
 import atys.AtyPreGuide;
+import atys.AtySetting;
 
 public class MainActivity extends Activity {
 
-    private Button btnUpdateInput,btnStartCPR,btnSetting,btnLink,btnInfo;
     private int mYear,mMonth,mDay;
     private long months,updateMonths;
+    private RingButton ringButton;
+    private Shimmer shimmer;
+    private ShimmerTextView st;
+    private FloatingActionButton btnSetting,btnLink,btnInfo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        st= (ShimmerTextView) findViewById(R.id.shimmer_tv);
+        shimmer = new Shimmer();
+        shimmer.setRepeatCount(10);
+        shimmer.start(st);
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH);
@@ -42,26 +57,14 @@ public class MainActivity extends Activity {
             NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             manager.notify(Config.NOTIFICATION_ID, notification);
         }
+        btnSetting = (FloatingActionButton)findViewById(R.id.btnSettings);
+        btnInfo=(FloatingActionButton)findViewById(R.id.btnInfo);
+        btnLink=(FloatingActionButton)findViewById(R.id.btnLinks);
 
-
-        btnUpdateInput = (Button) findViewById(R.id.btnUpdateInput);
-        btnStartCPR=(Button)findViewById(R.id.btnStartCPR);
-//        btnSetting = (Button)findViewById(R.id.btnSetting);
-//        btnLink=(Button)findViewById(R.id.btnLink);
-//        btnInfo=(Button)findViewById(R.id.btnInfo);
-        btnUpdateInput.setOnClickListener(new View.OnClickListener() {
+        ringButton = (RingButton)findViewById(R.id.ringButton);
+        ringButton.setOnClickListener(new RingButton.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent i =new Intent(MainActivity.this, AtyInput.class);
-
-                startActivity(i);
-                finish();
-            }
-        });
-
-        btnStartCPR.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            public void clickUp() {
                 switch (Config.getCachedMethod(MainActivity.this)) {
                     case Config.RESULT_NONE:
                         Toast.makeText(MainActivity.this, R.string.please_update_the_input, Toast.LENGTH_LONG).show();
@@ -73,32 +76,40 @@ public class MainActivity extends Activity {
                         break;
 
                 }
+            }
+
+            @Override
+            public void clickDown() {
+                Intent i =new Intent(MainActivity.this, AtyInput.class);
+
+                startActivity(i);
+                finish();
+            }
+        });
+
+
+        btnSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AtySetting.class));
+            }
+        });
+
+        btnLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AtyLink.class));
 
             }
         });
 
-//        btnSetting.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this, AtySetting.class));
-//            }
-//        });
-//
-//        btnLink.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this, AtyLink.class));
-//
-//            }
-//        });
-//
-//        btnInfo.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this, AtyInfo.class));
-//
-//            }
-//        });
+        btnInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AtyInfo.class));
+
+            }
+        });
     }
 
 

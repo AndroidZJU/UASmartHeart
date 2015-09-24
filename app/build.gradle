@@ -39,6 +39,7 @@ dependencies {
     compile files('libs/classes.jar')
     compile(name: 'ringbutton', ext: 'aar')
     compile 'com.getbase:floatingactionbutton:1.10.0'
+    compile 'com.romainpiel.shimmer:library:1.4.0@aar'
 
 }
 
