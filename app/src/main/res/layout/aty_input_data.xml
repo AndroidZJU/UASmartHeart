@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/btn_monthly_input"
+        android:text="@string/Next"
         android:id="@+id/btnMonthInput" />
     </LinearLayout>
 
@@ -44,12 +44,14 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Name: "/>
-        <EditText
+        <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/tv_name"
+            app:met_baseColor="#0056d3"
+            app:met_primaryColor="@color/cpb_blue"
             android:gravity="center_horizontal"
-            android:text="22a"
+            android:text="Inial Name"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_weight="1"/>
 

@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +15,7 @@ import com.dd.CircularProgressButton;
 import com.fengnanyue.uasmartheart.Config;
 import com.fengnanyue.uasmartheart.MainActivity;
 import com.fengnanyue.uasmartheart.R;
+import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.util.Calendar;
 
@@ -27,7 +27,7 @@ public class AtyInput extends Activity implements View.OnClickListener {
     private CircularProgressButton btnSave;
     private RadioButton btnMale,btnFemale;
     private TextView daTextView;
-    private TextView tvName;
+    private com.rengwuxian.materialedittext.MaterialEditText tvName;
     private String savedName;
     private String selectedDate;
     private int mYear,mMonth,mDay,age;
@@ -45,7 +45,7 @@ public class AtyInput extends Activity implements View.OnClickListener {
         btnMale.setOnClickListener(this);
         btnBacktoMain = (Button)findViewById(R.id.btnBacktoMain);
         btnBacktoMain.setOnClickListener(this);
-        tvName = (EditText)findViewById(R.id.tv_name);
+        tvName = (MaterialEditText) findViewById(R.id.tv_name);
         savedName = Config.getCachedName(AtyInput.this);
         System.out.println(savedName);
         tvName.setText(savedName);
