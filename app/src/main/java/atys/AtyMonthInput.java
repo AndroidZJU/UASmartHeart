@@ -10,7 +10,6 @@ import android.os.Environment;
 import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +28,7 @@ import java.io.InputStream;
 import java.util.Calendar;
 
 import at.markushi.ui.CircleButton;
+import info.hoang8f.widget.FButton;
 import tools.DialogActivityFront;
 import tools.DialogActivitySide;
 import tools.ShowFront;
@@ -40,7 +40,7 @@ import tools.ShowSide;
 public class AtyMonthInput extends Activity implements View.OnClickListener {
 
     private MaterialEditText etHeight,etWeight,etChestCircumference,etSternum;
-    private Button btnMonthtoMain,btnEdit;
+    private FButton btnMonthtoMain,btnEdit;
     private CircleButton btnFrontUpload,btnSideUpload,btnFrontView,btnSideView;
     private CircularProgressButton btnMonthSave;
     private TextView tvLastUpdate;
@@ -56,8 +56,8 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
         btnSideUpload= (CircleButton) findViewById(R.id.btnSideUpload);
         btnSideView= (CircleButton) findViewById(R.id.btnSideView);
         btnMonthSave = (CircularProgressButton) findViewById(R.id.btnMonthSave);
-        btnMonthtoMain=(Button)findViewById(R.id.btnMonthtoMain);
-        btnEdit=(Button)findViewById(R.id.btnEdit);
+        btnMonthtoMain= (FButton) findViewById(R.id.btnMonthtoMain);
+        btnEdit= (FButton) findViewById(R.id.btnEdit);
 
 
         etHeight= (MaterialEditText) findViewById(R.id.et_height);
