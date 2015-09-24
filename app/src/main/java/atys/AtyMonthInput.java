@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.dd.CircularProgressButton;
 import com.fengnanyue.uasmartheart.Config;
 import com.fengnanyue.uasmartheart.MainActivity;
@@ -220,6 +222,40 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
 
             case R.id.btnMonthSave:
                 btnMonthSave.setIndeterminateProgressMode(true);
+
+                if((Integer.parseInt(etHeight.getText().toString())<=0)||(Integer.parseInt(etHeight.getText().toString())>200)){
+                    YoYo.with(Techniques.Tada)
+                            .duration(700)
+                            .playOn(findViewById(R.id.layoutHeight));
+                    Toast.makeText(AtyMonthInput.this, "Please set the correct height!", Toast.LENGTH_LONG).show();
+                    btnMonthSave.setProgress(-1);
+                    break;
+                }
+                if((Integer.parseInt(etWeight.getText().toString())<=0)||(Integer.parseInt(etWeight.getText().toString())>150)){
+                    YoYo.with(Techniques.Tada)
+                            .duration(700)
+                            .playOn(findViewById(R.id.laioutWeight));
+                    Toast.makeText(AtyMonthInput.this, "Please set the correct weight!", Toast.LENGTH_LONG).show();
+                    btnMonthSave.setProgress(-1);
+                    break;
+                }
+                if((Integer.parseInt(etChestCircumference.getText().toString())<=0)||(Integer.parseInt(etChestCircumference.getText().toString())>200)){
+                    YoYo.with(Techniques.Tada)
+                            .duration(700)
+                            .playOn(findViewById(R.id.layoutChest));
+                    Toast.makeText(AtyMonthInput.this, "Please set the correct chest circumference!", Toast.LENGTH_LONG).show();
+                    btnMonthSave.setProgress(-1);
+                    break;
+                }
+                if((Integer.parseInt(etSternum.getText().toString())<=0)||(Integer.parseInt(etSternum.getText().toString())>100)){
+                    YoYo.with(Techniques.Tada)
+                            .duration(700)
+                            .playOn(findViewById(R.id.layoutSternum));
+                    Toast.makeText(AtyMonthInput.this, "Please set the correct length!", Toast.LENGTH_LONG).show();
+                    btnMonthSave.setProgress(-1);
+                    break;
+                }
+
                 btnMonthSave.setProgress(10);
                 Config.cacheHeight(AtyMonthInput.this, etHeight.getText().toString());
                 btnMonthSave.setProgress(20);

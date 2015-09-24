@@ -39,6 +39,7 @@
         android:paddingLeft="10dp"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
+        android:id="@+id/layoutHeight"
         android:layout_weight="1"
         android:orientation="horizontal">
         <TextView
@@ -67,6 +68,7 @@
         android:paddingLeft="10dp"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
+        android:id="@+id/laioutWeight"
         android:layout_weight="1"
         android:orientation="horizontal">
         <TextView
@@ -97,6 +99,7 @@
         android:paddingLeft="10dp"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:id="@+id/layoutChest"
         android:layout_width="fill_parent"
         android:orientation="horizontal">
         <TextView
@@ -126,6 +129,7 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:id="@+id/layoutSternum"
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
