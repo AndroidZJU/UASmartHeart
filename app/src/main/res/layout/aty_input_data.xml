@@ -48,11 +48,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/tv_name"
-            android:hint="Enter your baby's name"
+            android:hint="Nickname is also OK"
+            app:met_textColorHint="@color/cpb_grey"
             app:met_baseColor="#0056d3"
             app:met_primaryColor="@color/cpb_blue"
             android:gravity="center_horizontal"
-            android:text="Inial Name"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_weight="1"/>
 
@@ -140,6 +140,7 @@
         app:cpb_textIdle="@string/save_monthinput"
         android:textColor="#fff"
         app:cpb_iconComplete="@drawable/ic_done_black_32dp_1x"
+        app:cpb_iconError="@drawable/ic_error"
 
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_gravity="center_horizontal"

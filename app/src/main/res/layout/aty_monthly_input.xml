@@ -51,6 +51,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/et_height"
             android:layout_marginRight="10dp"
+            app:met_textColorHint="@color/cpb_grey"
             android:numeric="integer"
             android:hint="Please enter an integer"
             app:met_baseColor="#0056d3"
@@ -78,6 +79,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/et_weight"
             android:numeric="integer"
+            app:met_textColorHint="@color/cpb_grey"
             android:hint="Please enter an integer"
             app:met_baseColor="#0056d3"
             app:met_primaryColor="@color/cpb_blue"
@@ -110,6 +112,7 @@
             android:layout_marginRight="10dp"
             app:met_primaryColor="@color/cpb_blue"
             android:inputType="number"
+            app:met_textColorHint="@color/cpb_grey"
             android:enabled="false"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -138,6 +141,7 @@
             android:layout_marginRight="10dp"
             android:gravity="center_horizontal"
             android:enabled="false"
+            app:met_textColorHint="@color/cpb_grey"
             android:inputType="number"
             android:layout_height="wrap_content"
             android:id="@+id/et_sternum"
@@ -260,13 +264,13 @@
         android:textColor="#fff"
         app:cpb_cornerRadius="100dp"
         app:cpb_iconComplete="@drawable/ic_done_black_32dp_1x"
+        app:cpb_iconError="@drawable/ic_error"
         android:id="@+id/btnMonthSave"
         android:layout_gravity="center_horizontal"
 
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:gravity="center"
         />
-        <!--app:cpb_cornerRadius="48dp"-->
 
 
 
