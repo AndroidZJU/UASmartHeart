@@ -6,18 +6,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
-
     <com.victor.ringbutton.RingButton
         android:id="@+id/ringButton"
         app:ringbutton_upText="Take Photo"
         app:ringbutton_downText="Hand Write"
-        app:ringbutton_upDrawable="@drawable/heart"
-        app:ringbutton_downDrawable="@drawable/heart"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        app:ringbutton_upDrawable="@drawable/upload"
+        app:ringbutton_downDrawable="@drawable/view"
         android:layout_centerInParent="true"
-        android:layout_width="240dp"
-        android:layout_height="240dp"/>
-    <Button
+        android:layout_width="400dp"
+        android:layout_height="400dp"/>
+
+    <LinearLayout
         android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/start_cpr"
         android:id="@+id/btnStartCPR"
@@ -25,7 +32,7 @@
         android:layout_gravity="center_vertical"
         android:gravity="center" />
     <Button
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/update_input"
         android:id="@+id/btnUpdateInput"
@@ -35,7 +42,7 @@
 
 
     <Button
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/settings"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -43,7 +50,7 @@
         android:layout_gravity="center_horizontal" />
 
     <Button
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/useful_links"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -51,11 +58,11 @@
         android:layout_gravity="center_horizontal" />
 
     <Button
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_height="wrap_content"
         android:text="@string/children_health_info"
         android:id="@+id/btnInfo"
         android:layout_gravity="center_horizontal" />
-
+    </LinearLayout>
 </RelativeLayout>

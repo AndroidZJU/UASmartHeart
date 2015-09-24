@@ -15,11 +15,8 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-import atys.AtyInfo;
 import atys.AtyInput;
-import atys.AtyLink;
 import atys.AtyPreGuide;
-import atys.AtySetting;
 
 public class MainActivity extends Activity {
 
@@ -49,9 +46,9 @@ public class MainActivity extends Activity {
 
         btnUpdateInput = (Button) findViewById(R.id.btnUpdateInput);
         btnStartCPR=(Button)findViewById(R.id.btnStartCPR);
-        btnSetting = (Button)findViewById(R.id.btnSetting);
-        btnLink=(Button)findViewById(R.id.btnLink);
-        btnInfo=(Button)findViewById(R.id.btnInfo);
+//        btnSetting = (Button)findViewById(R.id.btnSetting);
+//        btnLink=(Button)findViewById(R.id.btnLink);
+//        btnInfo=(Button)findViewById(R.id.btnInfo);
         btnUpdateInput.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,28 +77,28 @@ public class MainActivity extends Activity {
             }
         });
 
-        btnSetting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, AtySetting.class));
-            }
-        });
-
-        btnLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, AtyLink.class));
-
-            }
-        });
-
-        btnInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, AtyInfo.class));
-
-            }
-        });
+//        btnSetting.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, AtySetting.class));
+//            }
+//        });
+//
+//        btnLink.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, AtyLink.class));
+//
+//            }
+//        });
+//
+//        btnInfo.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, AtyInfo.class));
+//
+//            }
+//        });
     }
 
 

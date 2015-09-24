@@ -37,6 +37,8 @@ dependencies {
     compile 'info.hoang8f:fbutton:1.0.5'
     compile 'com.daimajia.easing:library:1.0.1@aar'
     compile files('libs/classes.jar')
-    compile files('libs/twobutton.jar')
+    compile(name: 'ringbutton', ext: 'aar')
+    compile 'com.getbase:floatingactionbutton:1.10.0'
+
 }
 
