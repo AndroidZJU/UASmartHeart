@@ -1,6 +1,7 @@
 package atys;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -10,6 +11,7 @@ import android.os.Environment;
 import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,6 +55,7 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_monthly_input);
+        findViewById(R.id.rootviewMonth).setOnClickListener(this);
         btnFrontUpload= (CircleButton) findViewById(R.id.btnFrontUpload);
         btnFrontView= (CircleButton) findViewById(R.id.btnFrontView);
         btnSideUpload= (CircleButton) findViewById(R.id.btnSideUpload);
@@ -185,6 +188,11 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.rootviewMonth:
+                InputMethodManager imm = (InputMethodManager)
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                break;
             case R.id.btnMonthtoMain:
                 startActivity(new Intent(AtyMonthInput.this, MainActivity.class));
                 finish();

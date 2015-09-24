@@ -2,9 +2,11 @@ package atys;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.DatePicker;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -39,6 +41,7 @@ public class AtyInput extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_input_data);
 
+        findViewById(R.id.rootviewBasic).setOnClickListener(this);
         btnMonthInput= (FButton) findViewById(R.id.btnMonthInput);
         btnMonthInput.setOnClickListener(this);
         btnMale= (RadioButton) findViewById(R.id.btnMale);
@@ -74,6 +77,11 @@ public class AtyInput extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.rootviewBasic:
+                InputMethodManager imm = (InputMethodManager)
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                break;
             case R.id.btnBacktoMain:
 
                 startActivity(new Intent(AtyInput.this, MainActivity.class));
