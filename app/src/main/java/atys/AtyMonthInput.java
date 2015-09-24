@@ -198,6 +198,18 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                 finish();
                 break;
             case R.id.btnEdit:
+                YoYo.with(Techniques.RubberBand)
+                        .duration(700)
+                        .playOn(findViewById(R.id.laioutWeight));
+                YoYo.with(Techniques.RubberBand)
+                        .duration(700)
+                        .playOn(findViewById(R.id.layoutHeight));
+                YoYo.with(Techniques.RubberBand)
+                        .duration(700)
+                        .playOn(findViewById(R.id.layoutChest));
+                YoYo.with(Techniques.RubberBand)
+                        .duration(700)
+                        .playOn(findViewById(R.id.layoutSternum));
                 etHeight.setEnabled(true);
                 etWeight.setEnabled(true);
                 etChestCircumference.setEnabled(true);
@@ -264,7 +276,7 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                     break;
                 }
 
-
+                btnMonthSave.setProgress(0);
                 btnMonthSave.setProgress(10);
                 Config.cacheHeight(AtyMonthInput.this, etHeight.getText().toString());
                 btnMonthSave.setProgress(20);
@@ -277,13 +289,17 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                 Config.cacheUpdateDate(AtyMonthInput.this, mYear + " - " + (mMonth + 1) + " - " + mDay);
                 btnMonthSave.setProgress(60);
                 currentmonths=(mYear-2015)*12+mMonth+1+mDay/30;
-                Config.cacheMonths(AtyMonthInput.this,currentmonths);
+                Config.cacheMonths(AtyMonthInput.this, currentmonths);
                 btnMonthSave.setProgress(70);
                 etHeight.setEnabled(false);
                 btnMonthSave.setProgress(80);
                 etWeight.setEnabled(false);
                 btnMonthSave.setProgress(90);
                 etChestCircumference.setEnabled(false);
+                tvLastUpdate.setText(Config.getCachedUpdateDate(AtyMonthInput.this));
+                YoYo.with(Techniques.Wobble)
+                        .duration(700)
+                        .playOn(findViewById(R.id.tvLastUpdate));
                 btnMonthSave.setProgress(100);
 
                 etSternum.setEnabled(false);

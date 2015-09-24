@@ -101,7 +101,6 @@ public class AtyInput extends Activity implements View.OnClickListener {
                 break;
 
             case R.id.btnSave:
-                btnSave.setIndeterminateProgressMode(true);
                 btnSave.setProgress(0);
 
                 if(tvName.getText().toString().length()==0){
@@ -132,8 +131,9 @@ public class AtyInput extends Activity implements View.OnClickListener {
                     break;
                 }
 
+                btnSave.setIndeterminateProgressMode(true);
 
-
+                    btnSave.setProgress(0);
                     btnSave.setProgress(50);
                     btnSave.setProgress(75);
                     btnSave.setProgress(100);
