@@ -10,6 +10,8 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.dd.CircularProgressButton;
 import com.fengnanyue.uasmartheart.Config;
 import com.fengnanyue.uasmartheart.MainActivity;
@@ -91,22 +93,53 @@ public class AtyInput extends Activity implements View.OnClickListener {
 
             case R.id.btnSave:
                 btnSave.setIndeterminateProgressMode(true);
+                btnSave.setProgress(0);
 
-                btnSave.setProgress(0);
-                btnSave.setProgress(50);
-                btnSave.setProgress(75);
-                btnSave.setProgress(100);
-                Toast.makeText(AtyInput.this,"Saved successful",Toast.LENGTH_SHORT).show();
-                btnSave.setProgress(0);
-                if (btnFemale.isChecked()){
-                    Config.cacheGender(AtyInput.this,Config.FEMALE);
+                if(tvName.getText().toString()==null){
+                    YoYo.with(Techniques.Tada)
+                            .duration(700)
+                            .playOn(findViewById(R.id.layoutName));
+                    Toast.makeText(AtyInput.this, "Please enter name!", Toast.LENGTH_LONG).show();
+                    btnSave.setProgress(-1);
+
+                    break;
                 }
-                if(btnMale.isChecked()){
-                    Config.cacheGender(AtyInput.this,Config.MALE);
+                if((!btnMale.isChecked())&&(!btnMale.isChecked())){
+                    YoYo.with(Techniques.Tada)
+                            .duration(700)
+                            .playOn(findViewById(R.id.layoutGender));
+                    Toast.makeText(AtyInput.this, "Please choose gender!", Toast.LENGTH_LONG).show();
+                    btnSave.setProgress(-1);
+
+                    break;
                 }
-                Config.cacheAge(AtyInput.this,age);
-                Config.cacheName(AtyInput.this, tvName.getText().toString());
-                Config.cacheDate(AtyInput.this,daTextView.getText().toString());
+                if(age<0||age>100){
+                    YoYo.with(Techniques.Tada)
+                            .duration(700)
+                            .playOn(findViewById(R.id.laioutBirthday));
+                    Toast.makeText(AtyInput.this, "Please set birthday!", Toast.LENGTH_LONG).show();
+                    btnSave.setProgress(-1);
+
+                    break;
+                }
+
+
+
+                    btnSave.setProgress(50);
+                    btnSave.setProgress(75);
+                    btnSave.setProgress(100);
+                    Toast.makeText(AtyInput.this, "Saved successful", Toast.LENGTH_SHORT).show();
+                    btnSave.setProgress(0);
+                    if (btnFemale.isChecked()) {
+                        Config.cacheGender(AtyInput.this, Config.FEMALE);
+                    }
+                    if (btnMale.isChecked()) {
+                        Config.cacheGender(AtyInput.this, Config.MALE);
+                    }
+                    Config.cacheAge(AtyInput.this, age);
+                    Config.cacheName(AtyInput.this, tvName.getText().toString());
+                    Config.cacheDate(AtyInput.this, daTextView.getText().toString());
+
                 break;
             case R.id.btnMonthInput:
                 startActivity(new Intent(AtyInput.this,AtyMonthInput.class));
