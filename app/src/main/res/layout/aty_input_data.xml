@@ -11,6 +11,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
 
+
     android:orientation="horizontal">
     <info.hoang8f.widget.FButton
         android:layout_width="wrap_content"

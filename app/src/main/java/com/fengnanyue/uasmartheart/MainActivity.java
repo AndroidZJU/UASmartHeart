@@ -70,7 +70,6 @@ public class MainActivity extends Activity {
                         Toast.makeText(MainActivity.this, R.string.please_update_the_input, Toast.LENGTH_LONG).show();
                         break;
 
-
                     default:
                         startActivity(new Intent(MainActivity.this, AtyPreGuide.class));
                         break;
