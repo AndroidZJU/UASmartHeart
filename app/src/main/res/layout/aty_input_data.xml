@@ -15,6 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btn_back_to_main_menu"
+        android:textColor="#fff"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/btnBacktoMain" />
     <TextView
@@ -27,6 +28,7 @@
         />
     <info.hoang8f.widget.FButton
         android:layout_width="wrap_content"
+        android:textColor="#fff"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/Next"

@@ -46,7 +46,7 @@ public class Config {
     }
 
     public static String getCachedName(Context context){
-        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(KEY_NAME, "");
+        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(KEY_NAME,"");
 
     }
     public static void cacheName(Context context,String name){
@@ -56,7 +56,7 @@ public class Config {
     }
 
     public static String getCachedDate(Context context){
-        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(KEY_DATE,"0000-00-00");
+        return context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).getString(KEY_DATE,context.getString(R.string.set_birthday));
     }
     public static void cacheDate(Context context,String date){
         SharedPreferences.Editor e = context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).edit();
@@ -65,7 +65,7 @@ public class Config {
     }
 
     public static int getCachedAge(Context context){
-        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getInt(KEY_AGE, 1);
+        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getInt(KEY_AGE, -1);
     }
 
     public static void cacheAge(Context context,int age){
@@ -131,7 +131,7 @@ public class Config {
     }
 
     public static String getCachedFrontImage(Context context){
-        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(KEY_FRONT_IMAGE,"");
+        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(KEY_FRONT_IMAGE,null);
     }
 
     public static void cacheUpdateFrontImage(Context context,String front){
@@ -140,7 +140,7 @@ public class Config {
         e.commit();
     }
     public static String getCachedSideImage(Context context){
-        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(KEY_SIDE_IMAGE,"");
+        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(KEY_SIDE_IMAGE,null);
     }
 
     public static void cacheUpdateSideImage(Context context,String side){

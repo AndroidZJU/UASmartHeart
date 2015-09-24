@@ -42,7 +42,7 @@ public class AtyInput extends Activity implements View.OnClickListener {
         btnMonthInput= (FButton) findViewById(R.id.btnMonthInput);
         btnMonthInput.setOnClickListener(this);
         btnMale= (RadioButton) findViewById(R.id.btnMale);
-
+        age=Config.getCachedAge(AtyInput.this);
         btnFemale = (RadioButton) findViewById(R.id.btnFemale);
         btnFemale.setOnClickListener(this);
         btnMale.setOnClickListener(this);
@@ -50,7 +50,6 @@ public class AtyInput extends Activity implements View.OnClickListener {
         btnBacktoMain.setOnClickListener(this);
         tvName = (MaterialEditText) findViewById(R.id.tv_name);
         savedName = Config.getCachedName(AtyInput.this);
-        System.out.println(savedName);
         tvName.setText(savedName);
         daTextView = (TextView) findViewById(R.id.tv_date);
         daTextView.setOnClickListener(this);
@@ -67,6 +66,8 @@ public class AtyInput extends Activity implements View.OnClickListener {
                 break;
             case Config.FEMALE:
                 btnFemale.setChecked(true);
+                break;
+            default:
                 break;
         }
     }
@@ -95,7 +96,7 @@ public class AtyInput extends Activity implements View.OnClickListener {
                 btnSave.setIndeterminateProgressMode(true);
                 btnSave.setProgress(0);
 
-                if(tvName.getText().toString()==null){
+                if(tvName.getText().toString().length()==0){
                     YoYo.with(Techniques.Tada)
                             .duration(700)
                             .playOn(findViewById(R.id.layoutName));

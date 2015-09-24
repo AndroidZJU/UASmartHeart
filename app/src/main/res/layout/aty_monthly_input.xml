@@ -18,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnMonthtoMain"
+            android:textColor="#fff"
             android:text="@string/main_menu"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
         <TextView
@@ -31,6 +32,7 @@
         <info.hoang8f.widget.FButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#fff"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/btnEdit"
             android:text="@string/edit"/>

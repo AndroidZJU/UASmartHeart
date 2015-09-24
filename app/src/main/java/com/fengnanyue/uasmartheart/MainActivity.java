@@ -58,6 +58,7 @@ public class MainActivity extends Activity {
                 Intent i =new Intent(MainActivity.this, AtyInput.class);
 
                 startActivity(i);
+                finish();
             }
         });
 

@@ -223,7 +223,7 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
             case R.id.btnMonthSave:
                 btnMonthSave.setIndeterminateProgressMode(true);
 
-                if((Integer.parseInt(etHeight.getText().toString())<=0)||(Integer.parseInt(etHeight.getText().toString())>200)){
+                if((etHeight.getText().toString().length()<=1)||(Integer.parseInt(etHeight.getText().toString())>200)){
                     YoYo.with(Techniques.Tada)
                             .duration(700)
                             .playOn(findViewById(R.id.layoutHeight));
@@ -231,7 +231,7 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                     btnMonthSave.setProgress(-1);
                     break;
                 }
-                if((Integer.parseInt(etWeight.getText().toString())<=0)||(Integer.parseInt(etWeight.getText().toString())>150)){
+                if((etWeight.getText().toString().length()<=1)||(Integer.parseInt(etWeight.getText().toString())>150)){
                     YoYo.with(Techniques.Tada)
                             .duration(700)
                             .playOn(findViewById(R.id.laioutWeight));
@@ -239,7 +239,7 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                     btnMonthSave.setProgress(-1);
                     break;
                 }
-                if((Integer.parseInt(etChestCircumference.getText().toString())<=0)||(Integer.parseInt(etChestCircumference.getText().toString())>200)){
+                if((etChestCircumference.getText().toString().length()<=1)||(Integer.parseInt(etChestCircumference.getText().toString())>200)){
                     YoYo.with(Techniques.Tada)
                             .duration(700)
                             .playOn(findViewById(R.id.layoutChest));
@@ -247,7 +247,7 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                     btnMonthSave.setProgress(-1);
                     break;
                 }
-                if((Integer.parseInt(etSternum.getText().toString())<=0)||(Integer.parseInt(etSternum.getText().toString())>100)){
+                if((etSternum.getText().toString().length()==0)||(Integer.parseInt(etSternum.getText().toString())>100)){
                     YoYo.with(Techniques.Tada)
                             .duration(700)
                             .playOn(findViewById(R.id.layoutSternum));
@@ -255,6 +255,7 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                     btnMonthSave.setProgress(-1);
                     break;
                 }
+
 
                 btnMonthSave.setProgress(10);
                 Config.cacheHeight(AtyMonthInput.this, etHeight.getText().toString());
