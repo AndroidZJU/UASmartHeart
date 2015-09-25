@@ -35,10 +35,11 @@
         android:id="@+id/multiple_actions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        fab:fab_expandDirection="left"
+        fab:fab_addButtonStrokeVisible="false"
         fab:fab_addButtonColorNormal="@color/white"
         fab:fab_addButtonColorPressed="@color/white_pressed"
         fab:fab_addButtonPlusIconColor="@color/half_black"
-        fab:fab_labelStyle="@style/menu_labels_style"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true">
@@ -50,7 +51,6 @@
             android:layout_height="wrap_content"
             fab:fab_colorNormal="@color/cpb_grey"
             fab:fab_colorPressed="#88dedede"
-            fab:fab_title="Settings"
             app:fab_size="mini"
             />
 
@@ -58,11 +58,11 @@
             android:id="@+id/btnLinks"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             app:fab_size="mini"
             app:fab_icon="@drawable/link"
             fab:fab_colorNormal="@color/cpb_grey"
-            fab:fab_colorPressed="#88dedede"
-            fab:fab_title="@string/useful_links" />
+            fab:fab_colorPressed="#88dedede" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnInfo"
@@ -71,8 +71,7 @@
             app:fab_size="mini"
             app:fab_icon="@drawable/info"
             fab:fab_colorNormal="@color/cpb_grey"
-            fab:fab_colorPressed="#88dedede"
-            fab:fab_title="@string/children_health_info" />
+            fab:fab_colorPressed="#88dedede" />
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 

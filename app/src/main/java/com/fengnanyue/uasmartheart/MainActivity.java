@@ -40,7 +40,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         st= (ShimmerTextView) findViewById(R.id.shimmer_tv);
         shimmer = new Shimmer();
-        shimmer.setRepeatCount(5);
         shimmer.start(st);
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);

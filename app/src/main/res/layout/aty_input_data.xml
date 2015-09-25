@@ -140,6 +140,7 @@
             android:id="@+id/tv_date"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#0000FF"
+            android:background="@drawable/draw_bar"
             android:text="0000-00-00"/>
 
     </LinearLayout>
