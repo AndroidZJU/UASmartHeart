@@ -47,7 +47,7 @@ public class AtyInput extends Activity implements View.OnClickListener {
         setContentView(R.layout.aty_input_data);
         st= (ShimmerTextView) findViewById(R.id.shimmer_input);
         shimmer = new Shimmer();
-        shimmer.setRepeatCount(1);
+        shimmer.setRepeatCount(2);
         shimmer.start(st);
         findViewById(R.id.rootviewBasic).setOnClickListener(this);
         btnMonthInput= (IconButton) findViewById(R.id.btnMonthInput);

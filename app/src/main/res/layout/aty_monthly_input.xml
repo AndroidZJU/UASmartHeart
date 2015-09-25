@@ -12,32 +12,41 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
+        android:layout_height="wrap_content"
+        android:background="#54D2E4"
         android:orientation="horizontal">
 
-        <info.hoang8f.widget.FButton
+        <com.phillipcalvin.iconbutton.IconButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnMonthtoMain"
-            android:textColor="#fff"
-            android:text="@string/main_menu"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:background="#54D2E4"
+            android:textColor="#444"
+            android:drawableLeft="@drawable/ic_home"
+            app:iconPadding="5dp"
             android:gravity="center"
-            android:backgroundTint="@color/abc_background_cache_hint_selector_material_dark"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+        <com.romainpiel.shimmer.ShimmerTextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="#444"
+            android:id="@+id/shimmer_monthlyinput"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="30sp"
             android:text="@string/monthly_input"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
-        <info.hoang8f.widget.FButton
+            />
+        <com.phillipcalvin.iconbutton.IconButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#fff"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:background="#54D2E4"
+            android:textColor="#444"
+            android:gravity="center"
+            android:drawableLeft="@drawable/ic_edit"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/btnEdit"
-            android:text="@string/edit"/>
+            android:text=""/>
     </LinearLayout>
     <LinearLayout
         android:paddingLeft="10dp"
@@ -138,6 +147,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/tvSternum"
+            android:clickable="true"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/length_of_sternum_cm"/>
         <com.rengwuxian.materialedittext.MaterialEditText
@@ -160,6 +171,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="180dp"
+        android:id="@+id/ivsternum"
         android:src="@drawable/chest_9"/>
     <LinearLayout
         android:paddingLeft="10dp"
@@ -252,6 +264,8 @@
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:layout_marginBottom="2dp"
+
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#FF0000"
@@ -261,12 +275,13 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:id="@+id/tvLastUpdate"
+            android:layout_marginBottom="2dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#FF0000" />
     <com.dd.CircularProgressButton
         android:layout_width="wrap_content"
         android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="2dp"
         android:layout_height="wrap_content"
         app:cpb_textIdle="@string/save_monthinput"
         android:textColor="#fff"

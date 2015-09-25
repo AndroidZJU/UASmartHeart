@@ -12,6 +12,7 @@ import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +22,10 @@ import com.dd.CircularProgressButton;
 import com.fengnanyue.uasmartheart.Config;
 import com.fengnanyue.uasmartheart.MainActivity;
 import com.fengnanyue.uasmartheart.R;
+import com.phillipcalvin.iconbutton.IconButton;
 import com.rengwuxian.materialedittext.MaterialEditText;
+import com.romainpiel.shimmer.Shimmer;
+import com.romainpiel.shimmer.ShimmerTextView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -32,7 +36,6 @@ import java.io.InputStream;
 import java.util.Calendar;
 
 import at.markushi.ui.CircleButton;
-import info.hoang8f.widget.FButton;
 import tools.DialogActivityFront;
 import tools.DialogActivitySide;
 import tools.ShowFront;
@@ -44,25 +47,35 @@ import tools.ShowSide;
 public class AtyMonthInput extends Activity implements View.OnClickListener {
 
     private MaterialEditText etHeight,etWeight,etChestCircumference,etSternum;
-    private FButton btnMonthtoMain,btnEdit;
+    private IconButton btnMonthtoMain,btnEdit;
     private CircleButton btnFrontUpload,btnSideUpload,btnFrontView,btnSideView;
     private CircularProgressButton btnMonthSave;
-    private TextView tvLastUpdate;
+    private TextView tvLastUpdate,tvSternum;
     private int mYear,mMonth,mDay,age;
     private long currentmonths;
+    private ShimmerTextView st;
+    private Shimmer shimmer;
+    private ImageView ivSternum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_monthly_input);
         findViewById(R.id.rootviewMonth).setOnClickListener(this);
+        ivSternum = (ImageView)findViewById(R.id.ivsternum);
+        st= (ShimmerTextView) findViewById(R.id.shimmer_monthlyinput);
+        shimmer = new Shimmer();
+        shimmer.setRepeatCount(2);
+        shimmer.start(st);
+        tvSternum = (TextView)findViewById(R.id.tvSternum);
+        tvSternum.setOnClickListener(this);
         btnFrontUpload= (CircleButton) findViewById(R.id.btnFrontUpload);
         btnFrontView= (CircleButton) findViewById(R.id.btnFrontView);
         btnSideUpload= (CircleButton) findViewById(R.id.btnSideUpload);
         btnSideView= (CircleButton) findViewById(R.id.btnSideView);
         btnMonthSave = (CircularProgressButton) findViewById(R.id.btnMonthSave);
-        btnMonthtoMain= (FButton) findViewById(R.id.btnMonthtoMain);
-        btnEdit= (FButton) findViewById(R.id.btnEdit);
+        btnMonthtoMain= (IconButton) findViewById(R.id.btnMonthtoMain);
+        btnEdit= (IconButton) findViewById(R.id.btnEdit);
 
 
         etHeight= (MaterialEditText) findViewById(R.id.et_height);
@@ -240,6 +253,11 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
 
                 break;
 
+            case R.id.tvSternum:
+                YoYo.with(Techniques.Tada)
+                        .duration(700)
+                        .playOn(findViewById(R.id.ivsternum));
+                break;
             case R.id.btnMonthSave:
                 btnMonthSave.setIndeterminateProgressMode(true);
 
@@ -297,7 +315,7 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                 btnMonthSave.setProgress(90);
                 etChestCircumference.setEnabled(false);
                 tvLastUpdate.setText(Config.getCachedUpdateDate(AtyMonthInput.this));
-                YoYo.with(Techniques.Wobble)
+                YoYo.with(Techniques.Tada)
                         .duration(700)
                         .playOn(findViewById(R.id.tvLastUpdate));
                 btnMonthSave.setProgress(100);
