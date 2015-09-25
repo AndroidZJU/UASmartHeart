@@ -57,6 +57,8 @@ public class AtySetting extends Activity {
                 findViewById(R.id.switch_main_8).setEnabled(!isChecked);
                 findViewById(R.id.switch_main_9).setEnabled(!isChecked);
 
+
+
             }
         });
     }
