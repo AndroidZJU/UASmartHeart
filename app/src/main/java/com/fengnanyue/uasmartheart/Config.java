@@ -34,6 +34,7 @@ public class Config {
     public static final int PHOTO_REQUEST_COED=2;
     public static final int CROP_REQUEST_COED=3;
     private static final String KEY_MONTHS = "key_months";
+    private static final String KEY_PHONE = "key_phone";
 
     public static int getCachedMethod(Context context){
         return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getInt(KEY_METHOD,RESULT_NONE);
@@ -46,7 +47,7 @@ public class Config {
     }
 
     public static String getCachedName(Context context){
-        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(KEY_NAME,"");
+        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(KEY_NAME, "");
 
     }
     public static void cacheName(Context context,String name){
@@ -156,6 +157,15 @@ public class Config {
     public static void cacheMonths(Context context,long months){
         SharedPreferences.Editor e = context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).edit();
         e.putLong(KEY_MONTHS, months);
+        e.commit();
+    }
+    public static String getCachedPhone(Context context){
+        return context.getSharedPreferences(APP_ID,Context.MODE_PRIVATE).getString(KEY_PHONE, "");
+    }
+
+    public static void cachePhone(Context context,String phone){
+        SharedPreferences.Editor e = context.getSharedPreferences(APP_ID, Context.MODE_PRIVATE).edit();
+        e.putString(KEY_PHONE, phone);
         e.commit();
     }
     public static Bitmap convertStringToIcon(String st)

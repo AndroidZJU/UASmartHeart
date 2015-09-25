@@ -33,6 +33,13 @@
         android:layout_height="wrap_content"
         android:text="@string/call_911"
         android:id="@+id/btnCall" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Private emergency call"
+        android:id="@+id/btnEmergencyCall" />
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

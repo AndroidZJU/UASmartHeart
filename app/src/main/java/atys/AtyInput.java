@@ -34,7 +34,7 @@ public class AtyInput extends Activity implements View.OnClickListener {
     private CircularProgressButton btnSave;
     private RadioButton btnMale,btnFemale;
     private TextView daTextView;
-    private com.rengwuxian.materialedittext.MaterialEditText tvName;
+    private com.rengwuxian.materialedittext.MaterialEditText tvName,etEmergency;
     private String savedName;
     private String selectedDate;
     private int mYear,mMonth,mDay,age;
@@ -45,6 +45,8 @@ public class AtyInput extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_input_data);
+        etEmergency=(MaterialEditText)findViewById(R.id.et_emergency);
+        etEmergency.setText(Config.getCachedPhone(AtyInput.this));
         st= (ShimmerTextView) findViewById(R.id.shimmer_input);
         shimmer = new Shimmer();
         shimmer.setRepeatCount(2);
@@ -156,6 +158,7 @@ public class AtyInput extends Activity implements View.OnClickListener {
                     if (btnMale.isChecked()) {
                         Config.cacheGender(AtyInput.this, Config.MALE);
                     }
+                    Config.cachePhone(AtyInput.this,etEmergency.getText().toString());
                     Config.cacheAge(AtyInput.this, age);
                     Config.cacheName(AtyInput.this, tvName.getText().toString());
                     Config.cacheDate(AtyInput.this, daTextView.getText().toString());

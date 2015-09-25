@@ -14,15 +14,17 @@ import com.fengnanyue.uasmartheart.R;
  * Created by Fernando on 15/9/19.
  */
 public class AtyPreGuide extends Activity implements View.OnClickListener {
-    private Button btnCPR,btnCall;
+    private Button btnCPR,btnCall,btnEmergencyCall;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_preguide);
+        btnEmergencyCall=(Button)findViewById(R.id.btnEmergencyCall);
         btnCPR = (Button)findViewById(R.id.btnCPR);
         btnCall =(Button)findViewById(R.id.btnCall);
         btnCall.setOnClickListener(this);
         btnCPR.setOnClickListener(this);
+        btnEmergencyCall.setOnClickListener(this);
     }
 
     @Override
@@ -55,6 +57,10 @@ public class AtyPreGuide extends Activity implements View.OnClickListener {
                 startActivity(i);
                 break;
 
+            case R.id.btnEmergencyCall:
+                Intent i1 = new Intent(Intent.ACTION_CALL,Uri.parse("tel:" +Config.getCachedPhone(AtyPreGuide.this)));
+                startActivity(i1);
+                break;
             default:
 
                 break;
