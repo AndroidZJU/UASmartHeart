@@ -8,68 +8,72 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:background="#54D2E4"
         android:orientation="horizontal"
         android:id="@+id/linearLayout2">
     <TextView
         android:layout_width="wrap_content"
-        android:layout_weight="1"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Name: "
-        android:textColor="#00f"
+        android:text="Name:"
+        android:textColor="#444"
         android:id="@+id/textView" />
     <TextView
         android:layout_width="120dp"
-        android:layout_weight="1.5"
+        android:layout_weight="2"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
+        android:gravity="center"
+        android:background="@drawable/draw_bar_noradius"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/tvName_1"/>
 
         <TextView
-            android:layout_width="50dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:textColor="#00f"
+            android:textColor="#444"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Age: "/>
+            android:text="Age:"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:layout_height="wrap_content"
+            android:background="@drawable/draw_bar_noradius"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/tvAge"/>
 
         <TextView
-            android:layout_width="80dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:textColor="#00f"
+            android:textColor="#444"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Rate: "/>
+            android:text="Rate:"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:layout_height="wrap_content"
             android:textColor="#f00"
+            android:background="@drawable/draw_bar_noradius"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/tvRate"/>
 
         <TextView
-            android:layout_width="80dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:textColor="#00f"
+            android:textColor="#444"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Depth: "/>
+            android:text="Depth:"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/draw_bar_noradius"
             android:layout_height="wrap_content"
             android:textColor="#f00"
+            android:gravity="center"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/tvDepth"/>
 
@@ -110,29 +114,29 @@
         android:id="@+id/linearLayout">
         <TextView
             android:layout_width="wrap_content"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Elapsed Time"
-            android:textColor="#00f"
+            android:text="Elapsed Time:  "
+            android:textColor="#444"
             />
         <TextView
-            android:layout_width="120dp"
-            android:layout_weight="1"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:textColor="#f00"
             android:id="@+id/tvTimer"
+            android:background="@drawable/draw_bar"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="00:00"
              />
 
         <TextView
             android:layout_width="wrap_content"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="0dp"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:textColor="#f00"
             android:singleLine="true"
             android:text="Perform CPR with the hand wearing the watch! "/>

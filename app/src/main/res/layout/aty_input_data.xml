@@ -184,7 +184,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_weight="1"
-        android:src="@drawable/cprwoman_9"/>
+        android:src="@drawable/cpr_heart_9"/>
     <com.dd.CircularProgressButton
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
