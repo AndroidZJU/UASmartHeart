@@ -40,7 +40,7 @@
             android:configChanges="keyboardHidden|orientation"/>
         <activity android:name="atys.AtyInfo"/>
         <activity android:name="atys.AtyLink"/>
-        <activity android:name="atys.AtySetting"/>
+        <activity android:name="atys.AtySetting" />
         <activity android:name="atys.AtyMonthInput"/>
         <activity android:name="atys.AtyPreGuide"/>
         <activity android:name="tools.ShowFront"/>
