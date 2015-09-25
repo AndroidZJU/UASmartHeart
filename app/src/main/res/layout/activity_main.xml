@@ -76,4 +76,11 @@
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="© 2015 Surgical Simulation Research Lab"
+        android:textColor="@color/cpb_white"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" />
 </RelativeLayout>

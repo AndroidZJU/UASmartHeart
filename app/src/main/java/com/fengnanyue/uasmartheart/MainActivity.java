@@ -40,7 +40,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         st= (ShimmerTextView) findViewById(R.id.shimmer_tv);
         shimmer = new Shimmer();
-        shimmer.setRepeatCount(10);
+        shimmer.setRepeatCount(5);
         shimmer.start(st);
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);
@@ -63,7 +63,7 @@ public class MainActivity extends Activity {
 
         ringButton = (RingButton)findViewById(R.id.ringButton);
         ringButton.setOnClickListener(new RingButton.OnClickListener() {
-            @Override
+
             public void clickUp() {
                 switch (Config.getCachedMethod(MainActivity.this)) {
                     case Config.RESULT_NONE:
@@ -71,18 +71,17 @@ public class MainActivity extends Activity {
                         break;
 
                     default:
-                        startActivity(new Intent(MainActivity.this, AtyPreGuide.class));
+                        Intent intent = new Intent(MainActivity.this, AtyPreGuide.class);
+                        startActivity(intent);
                         break;
 
                 }
             }
 
-            @Override
+
             public void clickDown() {
                 Intent i =new Intent(MainActivity.this, AtyInput.class);
-
                 startActivity(i);
-                finish();
             }
         });
 
