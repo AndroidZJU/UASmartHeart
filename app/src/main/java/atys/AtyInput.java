@@ -18,17 +18,19 @@ import com.dd.CircularProgressButton;
 import com.fengnanyue.uasmartheart.Config;
 import com.fengnanyue.uasmartheart.MainActivity;
 import com.fengnanyue.uasmartheart.R;
+import com.phillipcalvin.iconbutton.IconButton;
 import com.rengwuxian.materialedittext.MaterialEditText;
+import com.romainpiel.shimmer.Shimmer;
+import com.romainpiel.shimmer.ShimmerTextView;
 
 import java.util.Calendar;
-
-import info.hoang8f.widget.FButton;
 
 /**
  * Created by Fernando on 15/9/16.
  */
 public class AtyInput extends Activity implements View.OnClickListener {
-    private FButton btnBacktoMain,btnMonthInput;
+//    private FButton btnMonthInput;
+    private IconButton btnBacktoMain,btnMonthInput;
     private CircularProgressButton btnSave;
     private RadioButton btnMale,btnFemale;
     private TextView daTextView;
@@ -36,19 +38,26 @@ public class AtyInput extends Activity implements View.OnClickListener {
     private String savedName;
     private String selectedDate;
     private int mYear,mMonth,mDay,age;
+    private ShimmerTextView st;
+    private Shimmer shimmer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_input_data);
+        st= (ShimmerTextView) findViewById(R.id.shimmer_input);
+        shimmer = new Shimmer();
+        shimmer.setRepeatCount(1);
+        shimmer.start(st);
         findViewById(R.id.rootviewBasic).setOnClickListener(this);
-        btnMonthInput= (FButton) findViewById(R.id.btnMonthInput);
+        btnMonthInput= (IconButton) findViewById(R.id.btnMonthInput);
         btnMonthInput.setOnClickListener(this);
         btnMale= (RadioButton) findViewById(R.id.btnMale);
         age=Config.getCachedAge(AtyInput.this);
         btnFemale = (RadioButton) findViewById(R.id.btnFemale);
         btnFemale.setOnClickListener(this);
         btnMale.setOnClickListener(this);
-        btnBacktoMain = (FButton) findViewById(R.id.btnBacktoMain);
+        btnBacktoMain = (IconButton) findViewById(R.id.btnBacktoMain);
         btnBacktoMain.setOnClickListener(this);
         tvName = (MaterialEditText) findViewById(R.id.tv_name);
         savedName = Config.getCachedName(AtyInput.this);
