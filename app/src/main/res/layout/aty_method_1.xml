@@ -144,4 +144,13 @@
 
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/tvTest"
+        android:layout_above="@+id/linearLayout"
+        android:layout_toRightOf="@+id/tv_hand1"
+        android:layout_toEndOf="@+id/tv_hand1" />
 </RelativeLayout>

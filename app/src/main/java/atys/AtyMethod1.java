@@ -32,7 +32,7 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
     private TextToSpeech mTextToSpeech;
     private Handler msgHandler;
     private Thread thread,thread_1;
-    private TextView tvAge,tvName1,tvTimer,tvRate;
+    private TextView tvAge,tvName1,tvTimer,tvRate,tvTest;
     public volatile boolean exit;
     private SoundPool sp;
     private int soundId;
@@ -51,6 +51,7 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
         hand_1=(ImageView)findViewById(R.id.tv_hand1);
         YoYo.with(Techniques.Pulse).duration(1000).playOn(hand_1);
 
+        tvTest = (TextView)findViewById(R.id.tvTest);
         tvRate=(TextView)findViewById(R.id.tvRate);
         mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
 
@@ -170,6 +171,9 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
     @Override
     protected void onResume() {
         super.onResume();
+        mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY),SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD),SensorManager.SENSOR_DELAY_NORMAL);
 
 
     }
@@ -192,7 +196,15 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
 
     @Override
     public void onSensorChanged(SensorEvent event) {
+        switch (event.sensor.getType()){
+            case Sensor.TYPE_ACCELEROMETER:
+                String accelerometer = "Acceleration\n" + "X:" + event.values[0] + "\n" +"Y:" +event.values[1]
+                        + "\n" +"Z:" +event.values[2];
+                tvTest.setText(accelerometer);
+                break;
 
+
+        }
     }
 
     @Override
