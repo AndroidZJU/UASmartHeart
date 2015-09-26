@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,21 +25,34 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="200dp"
-        android:text="CPR"
+        android:text="Perform CPR"
+        android:textSize="50dp"
+        android:background="@color/fbutton_color_peter_river"
         android:id="@+id/btnCPR"
         android:layout_gravity="center_vertical" />
 
 
-    <Button
+    <com.phillipcalvin.iconbutton.IconButton
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/call_911"
+        android:textAllCaps="false"
+        android:background="@color/fbutton_color_nephritis"
+
+        android:text="Call 911"
+        android:textSize="20dp"
+        app:iconPadding="10dp"
+        android:drawableLeft="@drawable/ic_phone"
         android:id="@+id/btnCall" />
 
-    <Button
+    <com.phillipcalvin.iconbutton.IconButton
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Private emergency call"
+        android:textAllCaps="false"
+        android:background="@color/fbutton_color_pomegranate"
+        android:textSize="20dp"
+        app:iconPadding="10dp"
+        android:drawableLeft="@drawable/ic_phone"
+        android:text="Private Emergency Call"
         android:id="@+id/btnEmergencyCall" />
 
     <TextView
