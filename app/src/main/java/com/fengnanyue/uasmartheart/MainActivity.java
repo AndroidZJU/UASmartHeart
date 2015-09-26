@@ -49,7 +49,7 @@ public class MainActivity extends Activity {
         updateMonths = Config.getCachedMonths(MainActivity.this);
         if ((months-updateMonths)>=1) {
             Builder builder = new NotificationCompat.Builder(MainActivity.this);
-            builder.setSmallIcon(R.drawable.heart);
+            builder.setSmallIcon(R.drawable.baby_small);
             builder.setContentTitle("Input out of date!");
             builder.setContentText("Please update the monthly input!");
             Notification notification = builder.build();
