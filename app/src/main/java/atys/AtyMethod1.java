@@ -1,6 +1,10 @@
 package atys;
 
 import android.app.Activity;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
@@ -24,11 +28,11 @@ import java.util.TimerTask;
 /**
  * Created by Fernando on 15/9/17.
  */
-public class AtyMethod1 extends Activity {
+public class AtyMethod1 extends Activity implements SensorEventListener{
     private TextToSpeech mTextToSpeech;
     private Handler msgHandler;
     private Thread thread,thread_1;
-    private TextView tvAge,tvName1,tvTimer;
+    private TextView tvAge,tvName1,tvTimer,tvRate;
     public volatile boolean exit;
     private SoundPool sp;
     private int soundId;
@@ -39,17 +43,17 @@ public class AtyMethod1 extends Activity {
     private ImageView hand_1;
 
 
+    private SensorManager mSensorManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_method_1);
         hand_1=(ImageView)findViewById(R.id.tv_hand1);
         YoYo.with(Techniques.Pulse).duration(1000).playOn(hand_1);
-//        sa = new ScaleAnimation(0,1,0,1, Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
-//        sa1 = new ScaleAnimation(1,0,1,0, Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
-//        sa.setDuration(1000);sa1.setDuration(1000);
-//        sa.setRepeatCount(10);sa1.setRepeatCount(10);
-//        hand_1.setAnimation(sa);hand_1.setAnimation(sa1);
+
+        tvRate=(TextView)findViewById(R.id.tvRate);
+        mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+
 
 
         i=j=0;
@@ -161,6 +165,22 @@ public class AtyMethod1 extends Activity {
     public void stopTime(){
         timer.cancel();
     }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        mSensorManager.unregisterListener(this);
+    }
+
     @Override
     protected void onDestroy() {
         exit = true;
@@ -170,4 +190,13 @@ public class AtyMethod1 extends Activity {
         super.onDestroy();
     }
 
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
 }
