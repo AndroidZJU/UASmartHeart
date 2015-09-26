@@ -153,7 +153,7 @@
         <me.xiaopan.switchbutton.SwitchButton
             style="@style/item"
             android:id="@+id/switch_main_7"
-            android:text="Show CPR Values"
+            android:text="yooooooooo"
             android:background="@drawable/selector_preference_header"
             android:layout_marginTop="16dp"
             app:withTextInterval="16dp"
@@ -166,7 +166,7 @@
         <me.xiaopan.switchbutton.SwitchButton
             style="@style/item"
             android:id="@+id/switch_main_8"
-            android:text="Auto Screen Advance"
+            android:text="hehehehe"
             android:background="@drawable/selector_preference_center"
             app:withTextInterval="16dp"
             app:frameDrawable="@drawable/switch_frame"
@@ -178,7 +178,7 @@
         <me.xiaopan.switchbutton.SwitchButton
             style="@style/item"
             android:id="@+id/switch_main_9"
-            android:text="Record Data"
+            android:text="hahahaha"
             android:background="@drawable/selector_preference_footer"
             app:withTextInterval="16dp"
             android:checked="true"
