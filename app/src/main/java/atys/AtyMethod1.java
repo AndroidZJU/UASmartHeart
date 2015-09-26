@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -41,7 +42,7 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
     private TimerTask task = null;
     private ScaleAnimation sa,sa1;
     private ImageView hand_1;
-
+    private float[] gravity = new float[3];
 
     private SensorManager mSensorManager;
     @Override
@@ -198,9 +199,21 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
     public void onSensorChanged(SensorEvent event) {
         switch (event.sensor.getType()){
             case Sensor.TYPE_ACCELEROMETER:
-                String accelerometer = "Acceleration\n" + "X:" + event.values[0] + "\n" +"Y:" +event.values[1]
-                        + "\n" +"Z:" +event.values[2];
+                final float alpha =(float)0.8;
+                gravity[0]=alpha * gravity[0]+(1-alpha)*event.values[0];
+                gravity[1]=alpha * gravity[1]+(1-alpha)*event.values[1];
+                gravity[2]=alpha * gravity[2]+(1-alpha)*event.values[2];
+
+                String accelerometer = "Acceleration\n" + "X:" + (event.values[0]-gravity[0]) + "\n" +"Y:" +(event.values[1]-gravity[1])
+                        + "\n" +"Z:" +(event.values[2]-gravity[2]);
+                Log.d("z",String.valueOf(event.values[2]-gravity[2]));
                 tvTest.setText(accelerometer);
+                break;
+            case Sensor.TYPE_GRAVITY:
+                gravity[0] = event.values[0];
+                gravity[1] = event.values[1];
+                gravity[2] = event.values[2];
+
                 break;
 
 
