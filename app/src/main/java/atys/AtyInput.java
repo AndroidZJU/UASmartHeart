@@ -104,7 +104,7 @@ public class AtyInput extends Activity implements View.OnClickListener {
 
                         String theDate =String.format("%d-%d-%d",year,monthOfYear+1,dayOfMonth);
                         selectedDate=theDate;
-                        age = (int)((mYear+mMonth/12)-(year+monthOfYear/12));
+                        age = (int)((mYear+mMonth/12)-(year+monthOfYear/12))+1;
                         daTextView.setText(theDate);
                     }
                 },mYear,mMonth,mDay).show();

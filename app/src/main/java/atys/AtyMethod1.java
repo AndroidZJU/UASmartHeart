@@ -22,6 +22,7 @@ import com.daimajia.androidanimations.library.YoYo;
 import com.fengnanyue.uasmartheart.Config;
 import com.fengnanyue.uasmartheart.R;
 
+import java.text.DecimalFormat;
 import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -175,6 +176,7 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
         mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY),SensorManager.SENSOR_DELAY_NORMAL);
         mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD),SensorManager.SENSOR_DELAY_NORMAL);
         mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY),SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION),SensorManager.SENSOR_DELAY_NORMAL);
 
     }
 
@@ -215,10 +217,15 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
 
                 break;
 
-            case Sensor.TYPE_PROXIMITY:
-                tvTest.setText(String.valueOf(event.values[0]));
+            case Sensor.TYPE_LINEAR_ACCELERATION:
+                DecimalFormat df = new DecimalFormat("0.00");
+                String linear = "Linear\n" + "X: " +df.format(event.values[0]) +"\n" +"Y:"+df.format(event.values[1])+"\n"+"Z:"+df.format(event.values[2]);
+                tvTest.setText(linear);
                 break;
-            
+            case Sensor.TYPE_PROXIMITY:
+//                tvTest.setText(String.valueOf(event.values[0]));
+                break;
+
 
         }
     }
