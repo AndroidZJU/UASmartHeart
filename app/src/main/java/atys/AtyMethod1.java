@@ -51,7 +51,6 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
         setContentView(R.layout.aty_method_1);
         hand_1=(ImageView)findViewById(R.id.tv_hand1);
         YoYo.with(Techniques.Pulse).duration(1000).playOn(hand_1);
-
         tvTest = (TextView)findViewById(R.id.tvTest);
         tvRate=(TextView)findViewById(R.id.tvRate);
         mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
@@ -206,7 +205,7 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
 
                 String accelerometer = "Acceleration\n" + "X:" + (event.values[0]-gravity[0]) + "\n" +"Y:" +(event.values[1]-gravity[1])
                         + "\n" +"Z:" +(event.values[2]-gravity[2]);
-                Log.d("z",String.valueOf(event.values[2]-gravity[2]));
+                Log.d("z", String.valueOf(event.values[2] - gravity[2]));
 //                tvTest.setText(accelerometer);
                 break;
             case Sensor.TYPE_GRAVITY:
@@ -219,6 +218,7 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
             case Sensor.TYPE_PROXIMITY:
                 tvTest.setText(String.valueOf(event.values[0]));
                 break;
+            
 
         }
     }
