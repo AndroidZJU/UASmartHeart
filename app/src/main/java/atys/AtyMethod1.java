@@ -23,6 +23,7 @@ import com.fengnanyue.uasmartheart.Config;
 import com.fengnanyue.uasmartheart.R;
 
 import java.text.DecimalFormat;
+import java.util.Calendar;
 import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -34,10 +35,13 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
     private TextToSpeech mTextToSpeech;
     private Handler msgHandler;
     private Thread thread,thread_1;
-    private TextView tvAge,tvName1,tvTimer,tvRate,tvOri,tvTest,tvAcc,tvProx,tvMag;
+    private TextView tvAge,tvName1,tvTimer,tvRate,tvOri,tvTest,tvAcc,tvProx,tvMag,tvMoving;
     public volatile boolean exit;
     private SoundPool sp;
-    private int soundId;
+    private int soundId,mX,mY,mZ;
+    private long lasttimestamp = 0;
+    Calendar mCalendar;
+
     int i,j;
     private Timer timer = null;
     private TimerTask task = null;
@@ -53,6 +57,7 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
         setContentView(R.layout.aty_method_1);
         hand_1=(ImageView)findViewById(R.id.tv_hand1);
         YoYo.with(Techniques.Pulse).duration(1000).playOn(hand_1);
+        tvMoving = (TextView)findViewById(R.id.tvMoving);
         tvTest = (TextView)findViewById(R.id.tvTest);
         tvOri = (TextView)findViewById(R.id.tvOri);
         tvMag = (TextView)findViewById(R.id.tvMag);
@@ -61,7 +66,6 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
         tvRate=(TextView)findViewById(R.id.tvRate);
         mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
         df = new DecimalFormat("0.000");
-
         v=vx=vy=vz=0;
 
         i=j=0;
@@ -207,10 +211,30 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
     public void onSensorChanged(SensorEvent event) {
         switch (event.sensor.getType()){
             case Sensor.TYPE_ACCELEROMETER:
+                mCalendar = Calendar.getInstance();
+                long stamp = mCalendar.getTimeInMillis() / 1000l;// 1393844912
+                int x = (int) event.values[0];
+                int y = (int) event.values[1];
+                int z = (int) event.values[2];
+                int second = mCalendar.get(Calendar.SECOND);// 53
                 final float alpha =(float)0.8;
                 gravity[0]=alpha * gravity[0]+(1-alpha)*event.values[0];
                 gravity[1]=alpha * gravity[1]+(1-alpha)*event.values[1];
                 gravity[2]=alpha * gravity[2]+(1-alpha)*event.values[2];
+                int px = Math.abs(mX - x);
+                int py = Math.abs(mY - y);
+                int pz = Math.abs(mZ - z);
+                int maxvalue = Math.max(Math.max(px,py),pz);
+                if (maxvalue > 1) {
+                    lasttimestamp = stamp;
+                    tvMoving.setText("Device is moving...");
+                }else{
+                    tvMoving.setText("Not moving...");
+                }
+
+                mX = x;
+                mY = y;
+                mZ = z;
 
                 String accelerometer = "Acceleration(m^2/s)\n" + "X:" + (df.format(event.values[0]-gravity[0])) + "\n" +"Y:" +(df.format(event.values[1]-gravity[1]))
                         + "\n" +"Z:" +(df.format(event.values[2]-gravity[2]));

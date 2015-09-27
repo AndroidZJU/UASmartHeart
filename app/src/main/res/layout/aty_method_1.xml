@@ -137,6 +137,11 @@
                 android:layout_height="wrap_content"
                 android:text="Orientation"
                 android:id="@+id/tvOri"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Moving"
+                android:id="@+id/tvMoving"/>
         </LinearLayout>
 
     </LinearLayout>
