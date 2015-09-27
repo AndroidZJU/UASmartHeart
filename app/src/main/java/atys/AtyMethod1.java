@@ -41,10 +41,10 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
     private int soundId,mX,mY,mZ;
     private long lasttimestamp = 0;
     Calendar mCalendar;
-
+    private YoYo.AnimationComposer pulse;
     int i,j;
-    private Timer timer = null;
-    private TimerTask task = null;
+    private Timer timer,soundTimer = null;
+    private TimerTask task,soundTask = null;
     private ScaleAnimation sa,sa1;
     private ImageView hand_1;
     private float[] gravity = new float[3];
@@ -56,7 +56,9 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aty_method_1);
         hand_1=(ImageView)findViewById(R.id.tv_hand1);
-        YoYo.with(Techniques.Pulse).duration(1000).playOn(hand_1);
+        pulse= YoYo.with(Techniques.Pulse).duration(1000);
+        pulse.playOn(hand_1);
+
         tvMoving = (TextView)findViewById(R.id.tvMoving);
         tvTest = (TextView)findViewById(R.id.tvTest);
         tvOri = (TextView)findViewById(R.id.tvOri);
@@ -119,7 +121,6 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
                 try {
                     while(!exit) {
                         sleep(5000);
-                        sp.play(soundId, 1, 1, 0, 0, 1);
                         sleep(1000);
                         Message msg = msgHandler.obtainMessage();
                         msg.arg1 = R.string.push_harder;
@@ -173,9 +174,20 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
             }
         };
         timer.schedule(task,1000);
+
+        soundTimer=new Timer();
+        soundTask = new TimerTask() {
+            @Override
+            public void run() {
+                sp.play(soundId, 1, 1, 0, 0, 1);
+            }
+        };
+        soundTimer.schedule(soundTask,1000);
+
     }
     public void stopTime(){
         timer.cancel();
+        soundTimer.cancel();
     }
 
 
