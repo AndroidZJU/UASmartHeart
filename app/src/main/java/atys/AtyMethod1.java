@@ -44,6 +44,7 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
     private ScaleAnimation sa,sa1;
     private ImageView hand_1;
     private float[] gravity = new float[3];
+    private float v;
 
     private SensorManager mSensorManager;
     @Override
@@ -56,7 +57,7 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
         tvRate=(TextView)findViewById(R.id.tvRate);
         mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
 
-
+        v=0;
 
         i=j=0;
         tvTimer=(TextView)findViewById(R.id.tvTimer);
@@ -172,11 +173,11 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
     @Override
     protected void onResume() {
         super.onResume();
-        mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
-        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY),SensorManager.SENSOR_DELAY_NORMAL);
-        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD),SensorManager.SENSOR_DELAY_NORMAL);
-        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY),SensorManager.SENSOR_DELAY_NORMAL);
-        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION),SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), 200);
+        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY),200);
+        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD),200);
+        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY),200);
+        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION),200);
 
     }
 
@@ -208,6 +209,8 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
                 String accelerometer = "Acceleration\n" + "X:" + (event.values[0]-gravity[0]) + "\n" +"Y:" +(event.values[1]-gravity[1])
                         + "\n" +"Z:" +(event.values[2]-gravity[2]);
                 Log.d("z", String.valueOf(event.values[2] - gravity[2]));
+                v=  v+ (event.values[2]-gravity[2])*0.2f;
+                tvTest.setText(String.valueOf(v));
 //                tvTest.setText(accelerometer);
                 break;
             case Sensor.TYPE_GRAVITY:
@@ -219,8 +222,9 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
 
             case Sensor.TYPE_LINEAR_ACCELERATION:
                 DecimalFormat df = new DecimalFormat("0.00");
-                String linear = "Linear\n" + "X: " +df.format(event.values[0]) +"\n" +"Y:"+df.format(event.values[1])+"\n"+"Z:"+df.format(event.values[2]);
-                tvTest.setText(linear);
+//                String linear = "Linear\n" + "X: " +df.format(event.values[0]) +"\n" +"Y:"+df.format(event.values[1])+"\n"+"Z:"+df.format(event.values[2]);
+//                v=  (v+event.values[2]*0.2f);
+//                tvTest.setText(String.valueOf(v));
                 break;
             case Sensor.TYPE_PROXIMITY:
 //                tvTest.setText(String.valueOf(event.values[0]));
