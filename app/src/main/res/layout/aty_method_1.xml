@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -7,7 +7,6 @@
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:background="#54D2E4"
         android:orientation="horizontal"
         android:id="@+id/linearLayout2">
@@ -80,15 +79,22 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="450dp"
         android:layout_height="wrap_content"
-        android:layout_marginRight="120dp"
         android:src="@drawable/baby_9"
-        android:id="@+id/ivBaby"
-        android:layout_below="@+id/linearLayout2"
-        android:layout_above="@+id/linearLayout" />
+        android:id="@+id/ivBaby" />
 
 
 
@@ -99,9 +105,42 @@
             android:id="@+id/tv_hand1"
             android:layout_marginLeft="107dp"
             android:layout_marginStart="107dp"
-            android:layout_centerVertical="true"
-            android:layout_alignLeft="@+id/linearLayout"
-            android:layout_alignStart="@+id/linearLayout" />
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvAcc"
+            android:text="Acceleration" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Velocity"
+                android:id="@+id/tvTest"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Proximity"
+                android:id="@+id/tvProx"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Magnetic"
+                android:id="@+id/tvMag"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Orientation"
+                android:id="@+id/tvOri"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -109,7 +148,6 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:orientation="horizontal"
         android:id="@+id/linearLayout">
         <TextView
@@ -145,12 +183,5 @@
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/tvTest"
-        android:layout_above="@+id/linearLayout"
-        android:layout_toRightOf="@+id/tv_hand1"
-        android:layout_toEndOf="@+id/tv_hand1" />
-</RelativeLayout>
+
+</LinearLayout>
