@@ -285,7 +285,7 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
                 String orientation = "Orientation(degree)\n" + "Azimuth: " +df.format(event.values[0]) +"\n" +"Pitch:"+df.format(event.values[1]) +"\n"+"Roll:"+df.format(event.values[2]);
                 tvOri.setText(orientation);
                 break;
-
+            
         }
     }
 

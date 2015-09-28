@@ -43,6 +43,5 @@ dependencies {
     compile(name: 'switchbutton', ext: 'aar')
     compile(name: 'classes', ext: 'aar')
 
-
 }
 
