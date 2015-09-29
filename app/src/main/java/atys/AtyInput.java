@@ -117,7 +117,7 @@ public class AtyInput extends Activity implements View.OnClickListener {
                     YoYo.with(Techniques.Tada)
                             .duration(700)
                             .playOn(findViewById(R.id.layoutName));
-                    Toast.makeText(AtyInput.this, "Please enter name!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AtyInput.this, R.string.please_enter_name, Toast.LENGTH_LONG).show();
                     btnSave.setProgress(-1);
 
                     break;
@@ -126,7 +126,7 @@ public class AtyInput extends Activity implements View.OnClickListener {
                     YoYo.with(Techniques.Tada)
                             .duration(700)
                             .playOn(findViewById(R.id.layoutGender));
-                    Toast.makeText(AtyInput.this, "Please choose gender!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AtyInput.this, R.string.please_choose_gender, Toast.LENGTH_LONG).show();
                     btnSave.setProgress(-1);
 
                     break;
@@ -135,7 +135,7 @@ public class AtyInput extends Activity implements View.OnClickListener {
                     YoYo.with(Techniques.Tada)
                             .duration(700)
                             .playOn(findViewById(R.id.laioutBirthday));
-                    Toast.makeText(AtyInput.this, "Please set birthday!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AtyInput.this, R.string.please_set_birthday, Toast.LENGTH_LONG).show();
                     btnSave.setProgress(-1);
 
                     break;
@@ -150,7 +150,7 @@ public class AtyInput extends Activity implements View.OnClickListener {
                         .playOn(findViewById(R.id.btnMonthInput));
                     btnSave.setProgress(75);
                     btnSave.setProgress(100);
-                    Toast.makeText(AtyInput.this, "Saved successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AtyInput.this, R.string.saved_successfully, Toast.LENGTH_SHORT).show();
                     btnSave.setProgress(0);
                     if (btnFemale.isChecked()) {
                         Config.cacheGender(AtyInput.this, Config.FEMALE);

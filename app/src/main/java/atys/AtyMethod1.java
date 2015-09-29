@@ -85,15 +85,15 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
             public void handleMessage(Message msg) {
                 switch (msg.arg1){
                     case R.string.push_harder:
-                        Toast.makeText(AtyMethod1.this,"Push Harder!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AtyMethod1.this,R.string.push_harder,Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.string.push_faster:
-                        Toast.makeText(AtyMethod1.this,"Push Faster!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AtyMethod1.this,R.string.push_faster,Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.string.release_fully:
-                        Toast.makeText(AtyMethod1.this,"Release Fully!",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AtyMethod1.this,R.string.release_fully,Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.string.scale_animation:
@@ -110,7 +110,7 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
                 if (status == TextToSpeech.SUCCESS) {
                     int supported = mTextToSpeech.setLanguage(Locale.ENGLISH);
                     if ((supported != TextToSpeech.LANG_AVAILABLE) && (supported != TextToSpeech.LANG_COUNTRY_AVAILABLE)) {
-                        Toast.makeText(AtyMethod1.this, "Unsupported language!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AtyMethod1.this, R.string.unsupported_language, Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -125,7 +125,7 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
                         Message msg = msgHandler.obtainMessage();
                         msg.arg1 = R.string.push_harder;
                         msgHandler.sendMessage(msg);
-                        mTextToSpeech.speak("Push harder", TextToSpeech.QUEUE_FLUSH, null);
+                        mTextToSpeech.speak(getString(R.string.speak_push_harder), TextToSpeech.QUEUE_FLUSH, null);
 
                     }
                 } catch (InterruptedException e) {
@@ -194,12 +194,18 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
     @Override
     protected void onResume() {
         super.onResume();
-        mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
-        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY),SensorManager.SENSOR_DELAY_NORMAL);
-        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD),SensorManager.SENSOR_DELAY_NORMAL);
-        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY),SensorManager.SENSOR_DELAY_NORMAL);
-        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION),SensorManager.SENSOR_DELAY_NORMAL);
-        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION),SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this, mSensorManager.getDefaultSensor
+                (Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor
+                (Sensor.TYPE_GRAVITY),SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor
+                (Sensor.TYPE_MAGNETIC_FIELD),SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor
+                (Sensor.TYPE_PROXIMITY),SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor
+                (Sensor.TYPE_LINEAR_ACCELERATION),SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this,mSensorManager.getDefaultSensor
+                (Sensor.TYPE_ORIENTATION),SensorManager.SENSOR_DELAY_NORMAL);
 
     }
 
@@ -239,16 +245,16 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
                 int maxvalue = Math.max(Math.max(px,py),pz);
                 if (maxvalue > 1) {
                     lasttimestamp = stamp;
-                    tvMoving.setText("Device is moving...");
+                    tvMoving.setText(R.string.device_is_moving);
                 }else{
-                    tvMoving.setText("Not moving...");
+                    tvMoving.setText(R.string.not_moving);
                 }
 
                 mX = x;
                 mY = y;
                 mZ = z;
 
-                String accelerometer = "Acceleration(m^2/s)\n" + "X:" + (df.format(event.values[0]-gravity[0])) + "\n" +"Y:" +(df.format(event.values[1]-gravity[1]))
+                String accelerometer = getString(R.string.acceleration_m2_s2) + "X:" + (df.format(event.values[0]-gravity[0])) + "\n" +"Y:" +(df.format(event.values[1]-gravity[1]))
                         + "\n" +"Z:" +(df.format(event.values[2]-gravity[2]));
                 Log.d("z", String.valueOf(event.values[2] - gravity[2]));
                 tvAcc.setText(accelerometer);
@@ -256,7 +262,7 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
                 vy=  vy+ (event.values[1]-gravity[1])*0.05f;
                 vz=  vz+ (event.values[2]-gravity[2])*0.05f;
                 v = (float) Math.sqrt((vx*vx+vy*vy+vz*vz));
-                tvTest.setText("Velocity:" +String.valueOf(df.format(v)) +"m/s");
+                tvTest.setText(getString(R.string.velocity_maohao) +String.valueOf(df.format(v)) +"m/s");
 //                tvTest.setText(accelerometer);
                 break;
             case Sensor.TYPE_GRAVITY:
@@ -272,20 +278,20 @@ public class AtyMethod1 extends Activity implements SensorEventListener{
                 break;
             case Sensor.TYPE_PROXIMITY:
 //                tvTest.setText(String.valueOf(even    t.values[0]));
-                tvProx.setText("Proximity: " +String.valueOf(df.format(event.values[0]))+"cm");
+                tvProx.setText(getString(R.string.proximity_maohao) +String.valueOf(df.format(event.values[0]))+"cm");
 
                 break;
 
             case Sensor.TYPE_MAGNETIC_FIELD:
-                String magnetic = "Magnetic\n" + "X: " +df.format(event.values[0])+"uT" +"\n" +"Y:"+df.format(event.values[1])+"uT" +"\n"+"Z:"+df.format(event.values[2])+"uT";
+                String magnetic = getString(R.string.magnetic_gangn) + "X: " +df.format(event.values[0])+"uT" +"\n" +"Y:"+df.format(event.values[1])+"uT" +"\n"+"Z:"+df.format(event.values[2])+"uT";
                 tvMag.setText(magnetic);
 
                 break;
             case Sensor.TYPE_ORIENTATION:
-                String orientation = "Orientation(degree)\n" + "Azimuth: " +df.format(event.values[0]) +"\n" +"Pitch:"+df.format(event.values[1]) +"\n"+"Roll:"+df.format(event.values[2]);
+                String orientation = getString(R.string.orientation_degree_gangn) + "Azimuth: " +df.format(event.values[0]) +"\n" +"Pitch:"+df.format(event.values[1]) +"\n"+"Roll:"+df.format(event.values[2]);
                 tvOri.setText(orientation);
                 break;
-            
+
         }
     }
 

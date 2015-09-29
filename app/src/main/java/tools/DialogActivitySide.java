@@ -186,7 +186,7 @@ public class DialogActivitySide extends Activity implements View.OnClickListener
             byte[] bytes = stream.toByteArray();
             String img  = new String(Base64.encodeToString(bytes, Base64.DEFAULT));
             Config.cacheUpdateSideImage(DialogActivitySide.this,img);
-            Toast.makeText(DialogActivitySide.this, "Upload successfully", Toast.LENGTH_SHORT).show();
+            Toast.makeText(DialogActivitySide.this, R.string.upload_successfully, Toast.LENGTH_SHORT).show();
         }
     }
 

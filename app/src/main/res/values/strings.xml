@@ -34,4 +34,27 @@
     <string name="scale_animation">Scale Animation</string>
     <string name="save_monthinput">Save</string>
     <string name="set_birthday">Set birthday</string>
+    <string name="please_enter_name">Please enter name!</string>
+    <string name="please_choose_gender">Please choose gender!</string>
+    <string name="please_set_birthday">Please set birthday!</string>
+    <string name="saved_successfully">Saved successful</string>
+    <string name="unsupported_language">Unsupported language!</string>
+    <string name="speak_push_harder">Push harder</string>
+    <string name="device_is_moving">Device is moving...</string>
+    <string name="not_moving">Not moving...</string>
+    <string name="acceleration_m2_s2">Acceleration(m^2/s)\n</string>
+    <string name="velocity_maohao">Velocity:</string>
+    <string name="proximity_maohao">"Proximity: "</string>
+    <string name="magnetic_gangn">Magnetic\n</string>
+    <string name="orientation_degree_gangn">Orientation(degree)\n</string>
+    <string name="please_set_the_correct_height">Please set the correct height!</string>
+    <string name="please_set_the_correct_weight">Please set the correct weight!</string>
+    <string name="please_set_the_correct_chest_circumference">Please set the correct chest circumference!</string>
+    <string name="please_set_the_correct_length">Please set the correct length!</string>
+    <string name="input_out_of_date">Input out of date!</string>
+    <string name="please_update_the_monthly_input">Please update the monthly input!</string>
+    <string name="upload_successfully">Upload successfully</string>
+    <string name="camera">Camera</string>
+    <string name="photo_library">Photo Library</string>
+    <string name="cancel">Cancel</string>
 </resources>

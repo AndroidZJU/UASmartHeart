@@ -187,7 +187,7 @@ public class DialogActivityFront extends Activity implements View.OnClickListene
             byte[] bytes = stream.toByteArray();
             String img  = new String(Base64.encodeToString(bytes, Base64.DEFAULT));
             Config.cacheUpdateFrontImage(DialogActivityFront.this,img);
-            Toast.makeText(DialogActivityFront.this,"Upload successfully",Toast.LENGTH_SHORT).show();
+            Toast.makeText(DialogActivityFront.this,R.string.upload_successfully,Toast.LENGTH_SHORT).show();
         }
     }
 

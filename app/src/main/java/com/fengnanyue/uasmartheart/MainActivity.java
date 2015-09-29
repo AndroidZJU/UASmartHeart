@@ -50,8 +50,8 @@ public class MainActivity extends Activity {
         if ((months-updateMonths)>=1) {
             Builder builder = new NotificationCompat.Builder(MainActivity.this);
             builder.setSmallIcon(R.drawable.baby_small);
-            builder.setContentTitle("Input out of date!");
-            builder.setContentText("Please update the monthly input!");
+            builder.setContentTitle(getString(R.string.input_out_of_date));
+            builder.setContentText(getString(R.string.please_update_the_monthly_input));
             Notification notification = builder.build();
             NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             manager.notify(Config.NOTIFICATION_ID, notification);

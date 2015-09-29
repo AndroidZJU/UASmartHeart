@@ -265,7 +265,7 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                     YoYo.with(Techniques.Tada)
                             .duration(700)
                             .playOn(findViewById(R.id.layoutHeight));
-                    Toast.makeText(AtyMonthInput.this, "Please set the correct height!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AtyMonthInput.this, R.string.please_set_the_correct_height, Toast.LENGTH_LONG).show();
                     btnMonthSave.setProgress(-1);
                     break;
                 }
@@ -273,7 +273,7 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                     YoYo.with(Techniques.Tada)
                             .duration(700)
                             .playOn(findViewById(R.id.laioutWeight));
-                    Toast.makeText(AtyMonthInput.this, "Please set the correct weight!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AtyMonthInput.this, R.string.please_set_the_correct_weight, Toast.LENGTH_LONG).show();
                     btnMonthSave.setProgress(-1);
                     break;
                 }
@@ -281,7 +281,7 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                     YoYo.with(Techniques.Tada)
                             .duration(700)
                             .playOn(findViewById(R.id.layoutChest));
-                    Toast.makeText(AtyMonthInput.this, "Please set the correct chest circumference!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AtyMonthInput.this, R.string.please_set_the_correct_chest_circumference, Toast.LENGTH_LONG).show();
                     btnMonthSave.setProgress(-1);
                     break;
                 }
@@ -289,7 +289,7 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                     YoYo.with(Techniques.Tada)
                             .duration(700)
                             .playOn(findViewById(R.id.layoutSternum));
-                    Toast.makeText(AtyMonthInput.this, "Please set the correct length!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AtyMonthInput.this, R.string.please_set_the_correct_length, Toast.LENGTH_LONG).show();
                     btnMonthSave.setProgress(-1);
                     break;
                 }
@@ -321,7 +321,7 @@ public class AtyMonthInput extends Activity implements View.OnClickListener {
                 btnMonthSave.setProgress(100);
 
                 etSternum.setEnabled(false);
-                Toast.makeText(AtyMonthInput.this, "Saved successful", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AtyMonthInput.this, R.string.saved_successfully, Toast.LENGTH_SHORT).show();
                 btnMonthSave.setProgress(0);
                 break;
 
