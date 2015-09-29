@@ -57,4 +57,13 @@
     <string name="camera">Camera</string>
     <string name="photo_library">Photo Library</string>
     <string name="cancel">Cancel</string>
+    <string name="start_CPR">Start CPR</string>
+    <string name="update_input_major">Update Input</string>
+    <string name="name_maohao">Name:</string>
+    <string name="gender_maohao">Gender:</string>
+    <string name="male">male</string>
+    <string name="female">female</string>
+    <string name="birthday_maohao">Birthday:</string>
+    <string name="emergency_call">Emergency Call:</string>
+    <string name="for_emergency">For emergency</string>
 </resources>

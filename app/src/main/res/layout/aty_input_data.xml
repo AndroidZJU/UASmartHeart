@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Name: "/>
+            android:text="@string/name_maohao"/>
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Gender: "/>
+            android:text="@string/gender_maohao"/>
         <RadioGroup
             android:layout_width="fill_parent"
             android:layout_weight="1"
@@ -100,7 +100,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="male"
+                android:text="@string/male"
                 android:paddingLeft="0dp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:background="#00FFFFFF"
@@ -111,7 +111,7 @@
                 android:layout_weight="1"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_height="wrap_content"
-                android:text="female"
+                android:text="@string/female"
                 android:paddingLeft="0dp"
                 android:layout_gravity="center_horizontal"
                 android:id="@+id/btnFemale"/>
@@ -130,7 +130,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Birthday: "/>
+            android:text="@string/birthday_maohao"/>
 
         <TextView
             android:layout_width="0dp"
@@ -157,7 +157,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Emergency Call: "/>
+            android:text="@string/emergency_call"/>
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="0dp"
@@ -166,7 +166,7 @@
             android:layout_marginRight="10dp"
             app:met_textColorHint="@color/cpb_grey"
             android:numeric="integer"
-            android:hint="For emergency"
+            android:hint="@string/for_emergency"
             app:met_baseColor="#0056d3"
             app:met_primaryColor="@color/cpb_blue"
             android:gravity="center_horizontal"

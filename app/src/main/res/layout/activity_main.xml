@@ -22,8 +22,8 @@
         android:textSize="50sp"/>
     <com.victor.ringbutton.RingButton
         android:id="@+id/ringButton"
-        app:ringbutton_upText="Start CPR"
-        app:ringbutton_downText="Update Input"
+        app:ringbutton_upText="@string/start_CPR"
+        app:ringbutton_downText="@string/update_input_major"
         app:ringbutton_upDrawable="@drawable/heart_small"
         app:ringbutton_downDrawable="@drawable/baby_small"
         android:layout_width="310dp"
