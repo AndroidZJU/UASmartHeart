@@ -78,4 +78,5 @@
     <string name="system_settings">System Settings</string>
     <string name="CPR_options">CPR Options</string>
     <string name="some_other_stuff">Some Other Stuff</string>
+    <string name="nick_name_is_also_ok">Nickname is also OK</string>
 </resources>

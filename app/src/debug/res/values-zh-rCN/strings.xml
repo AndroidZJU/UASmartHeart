@@ -79,4 +79,6 @@
     <string name="system_settings">系统设置</string>
     <string name="CPR_options">CPR选项</string>
     <string name="some_other_stuff">其他的东西</string>
+    <string name="nick_name_is_also_ok">姓名或者昵称</string>
+
 </resources>

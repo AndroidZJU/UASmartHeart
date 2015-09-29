@@ -65,7 +65,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/tv_name"
-            android:hint="Nickname is also OK"
+            android:hint="@string/nick_name_is_also_ok"
             app:met_textColorHint="@color/cpb_grey"
             app:met_baseColor="#0056d3"
             app:met_primaryColor="@color/cpb_blue"
