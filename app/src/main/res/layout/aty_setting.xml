@@ -68,7 +68,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
-            android:text="System Settings"/>
+            android:text="@string/system_settings"/>
         <!-- state drawable defined through xml-->
         <me.xiaopan.switchbutton.SwitchButton
             style="@style/item"
@@ -102,7 +102,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
-            android:text="CPR Options"/>
+            android:text="@string/CPR_options"/>
 
         <me.xiaopan.switchbutton.SwitchButton
             style="@style/item"
@@ -148,7 +148,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:gravity="center_vertical"
-            android:text="Some Other Stuff"/>
+            android:text="@string/some_other_stuff"/>
 
         <me.xiaopan.switchbutton.SwitchButton
             style="@style/item"
