@@ -66,4 +66,13 @@
     <string name="birthday_maohao">Birthday:</string>
     <string name="emergency_call">Emergency Call:</string>
     <string name="for_emergency">For emergency</string>
+    <string name="name_maohao_1">Name:</string>
+    <string name="age_maohao">Age:</string>
+    <string name="rate_maohao">Rate:</string>
+    <string name="depth_maohao">Depth:</string>
+    <string name="elapsed_time">Elapsed Time:</string>
+    <string name="perform_CPR_with_the_hand_wearing_the_watch">Perform CPR with the hand wearing the watch!</string>
+    <string name="please_enter_an_integer">Please enter an integer</string>
+    <string name="last_update">Last Update:</string>
+    <string name="perform_cpr">Perform CPR</string>
 </resources>

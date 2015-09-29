@@ -26,7 +26,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="200dp"
-        android:text="Perform CPR"
+        android:text="@string/perform_cpr"
         android:textSize="50dp"
         android:layout_marginTop="1dp"
         android:background="@color/fbutton_color_peter_river"

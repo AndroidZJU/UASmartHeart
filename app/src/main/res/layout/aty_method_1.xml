@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Name:"
+        android:text="@string/name_maohao_1"
         android:textColor="#444"
         android:id="@+id/textView" />
     <TextView
@@ -32,7 +32,7 @@
             android:gravity="center_horizontal"
             android:textColor="#444"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Age:"/>
+            android:text="@string/age_maohao"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_weight="1"
@@ -48,7 +48,7 @@
             android:gravity="center_horizontal"
             android:textColor="#444"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Rate:"/>
+            android:text="@string/rate_maohao"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_weight="1"
@@ -66,7 +66,7 @@
             android:gravity="center_horizontal"
             android:textColor="#444"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Depth:"/>
+            android:text="@string/depth_maohao"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_weight="1"
@@ -161,7 +161,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Elapsed Time:  "
+            android:text="@string/elapsed_time"
             android:textColor="#444"
             />
         <TextView
@@ -184,7 +184,7 @@
             android:gravity="center"
             android:textColor="#f00"
             android:singleLine="true"
-            android:text="Perform CPR with the hand wearing the watch! "/>
+            android:text="@string/perform_CPR_with_the_hand_wearing_the_watch"/>
 
 
 
